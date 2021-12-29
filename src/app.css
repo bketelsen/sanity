@@ -1,0 +1,7 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+/* Write your global styles here, in PostCSS syntax */
+/* fixed width only on sm and up */
+
+@tailwind components;
+@tailwind utilities;
