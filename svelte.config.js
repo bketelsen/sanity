@@ -5,9 +5,15 @@ import adapter from '@sveltejs/adapter-vercel';
 const config = {
 	kit: {
 		adapter: adapter(),
-
 		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte'
+		target: '#svelte',
+		vite: {
+			server: {
+				fs: {
+					allow: ['studio']
+				}
+			}
+		}
 	},
 
 	preprocess: [preprocess({})]
