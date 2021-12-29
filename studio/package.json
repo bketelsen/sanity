@@ -9,12 +9,12 @@
 	"keywords": [
 		"sanity"
 	],
-	  "scripts": {
-    "dev": "sanity start",
-    "build": "sanity build ../static/sanity",
-    "graphql-deploy": "sanity graphql deploy --playground",
-    "test": "sanity check"
-  },
+	"scripts": {
+		"dev": "sanity start",
+		"build": "sanity build ../static/sanity",
+		"graphql-deploy": "sanity graphql deploy --playground",
+		"test": "sanity check"
+	},
 	"dependencies": {
 		"@sanity/base": "^2.0.5",
 		"@sanity/components": "^2.0.5",
