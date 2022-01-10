@@ -1,5 +1,24 @@
+<script context="module">
+	export const prerender = true;
+	export async function load({ fetch }) {
+		try {
+			const res = await fetch('/blog/all.json');
+			const {authors, posts} = await res.json();
+
+			return {
+				props: {authors,posts}
+			};
+		} catch (err) {
+			console.log('500:', err);
+		}
+	}
+</script>
+
 <script>
 	import TitleBlock from '$lib/components/TitleBlock.svelte';
+  export let authors;
+  export let posts;
+  console.log(posts)
 </script>
 
 <TitleBlock

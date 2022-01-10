@@ -12,6 +12,7 @@ const config = {
 				fs: {
 					allow: ['studio']
 				}
+
 			}
 		}
 	},

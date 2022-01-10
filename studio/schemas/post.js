@@ -48,6 +48,11 @@ export default {
       type: 'datetime',
     },
     {
+      name: 'seo',
+      title: 'SEO',
+      type: 'seo',
+    },
+    {
       name: 'body',
       title: 'Body',
       type: 'blockContent',

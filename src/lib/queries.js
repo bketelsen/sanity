@@ -9,12 +9,26 @@ export function getPostsQuery(extraFilter) {
     publishedAt < now()
     ${extraFilter ? `&& ${extraFilter}` : ''}
   ] | order(publishedAt desc) {
+    _id,
     title,
-    slug,
-    image,
-    publishedAt,
+    'date': publishedAt,
+    excerpt,
+    'slug': slug.current,
+    'coverImage': mainImage.asset->,
+      'author': author->{name, twitter, image},
+      "numberOfCharacters": length(pt::text(body)),
+      "estimatedWordCount": round(length(pt::text(body)) / 5),
+      "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
   }`
 }
+
+export const globalQuery = `'global': *[_type == 'global'][0]{...,author->{...}}`
+export const pageQuery = `'page': *[_type == 'page' && slug.current == $slug][0]{...}`
+export const sectionsQuery = `'sections': *[_type == "section"] | order(weight asc){
+     title,
+     slug,
+     description
+    }`
 
 /**
  * You can also re-use parts of projections as fragments.

@@ -1,6 +1,22 @@
+<script context="module">
+	export async function load({ fetch }) {
+		try {
+			const res = await fetch('/global.json');
+			const data = await res.json();
+			return {
+				props: data
+			};
+		} catch (err) {
+			console.log('500:', err);
+		}
+	}
+</script>
+
 <script>
+	export let global;
+	export let sections;
 	import Footer from '$lib/components/Footer.svelte';
-import '../app.css';
+	import '../app.css';
 </script>
 
 <div class="flex flex-col h-screen justify-between">
@@ -19,17 +35,18 @@ import '../app.css';
 				>
 					<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
 				</svg>
-				<span class="ml-3 text-xl">Brian Ketelsen</span>
+				<span class="ml-3 text-xl">{global.headerTitle}</span>
 			</a>
 			<nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-				<a href="/blog" class="mr-5 hover:text-white">Blog</a>
-				<a href="/bytes" class="mr-5 hover:text-white">Bytes</a>
-				<a href="/elsewhere" class="mr-5 hover:text-white">Elsewhere</a>
-				<a href="/about" class="mr-5 hover:text-white">About</a>
+				{#each sections as section}
+				<a href={section.slug.current} class="mr-5 hover:text-white">{section.title}</a>
+				{/each}
+
 			</nav>
+
 			<button
 				class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0"
-				>Button
+				>Reference
 				<svg
 					fill="none"
 					stroke="currentColor"
@@ -42,11 +59,12 @@ import '../app.css';
 					<path d="M5 12h14M12 5l7 7-7 7" />
 				</svg>
 			</button>
+
 		</div>
 	</header>
 	<main class="mb-auto">
 		<slot />
 	</main>
 
-<Footer />
+	<Footer {global} />
 </div>
