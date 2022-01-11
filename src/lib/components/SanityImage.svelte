@@ -13,7 +13,7 @@
 {#if image}
   <img
     loading="lazy"
-    src={urlFor(image).width(maxWidth).fit('fillmax')}
+    src={urlFor(image).width(maxWidth).fit('fillmax').auto('format')}
     alt={alt || image.alt || ''}
     class={classes}
     style="aspect-ratio: {image.metadata.dimensions}; opacity: {loaded ? 1 : 0}; transition: .2s opacity;"
