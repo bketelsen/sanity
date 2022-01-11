@@ -11,17 +11,17 @@
 		}
 	}
 </script>
+
 <script>
-	import PageTitle from "$lib/components/PageTitle.svelte";
-	import Sections from "$lib/components/Sections.svelte";
-	export let global;
+	import PageTitle from '$lib/components/PageTitle.svelte';
+	import PageWrapper from '$lib/components/PageWrapper.svelte';
+	import Sections from '$lib/components/Sections.svelte';
 	export let sections;
 	export let page;
-</script>?
-<section class="text-gray-400 body-font bg-gray-900">
-	<div class="container px-5 py-5 lg:py-24 mx-auto">
+</script>
+
+?
+<PageWrapper >
 		<PageTitle {...page} />
 		<Sections {sections} />
-
-	</div>
-</section>
+</PageWrapper>

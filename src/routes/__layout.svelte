@@ -39,7 +39,7 @@
 			</a>
 			<nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
 				{#each sections as section}
-				<a href={section.slug.current} class="mr-5 hover:text-white">{section.title}</a>
+				<a href='/{section.slug.current}' class="mr-5 hover:text-white">{section.title}</a>
 				{/each}
 
 			</nav>

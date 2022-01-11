@@ -27,7 +27,6 @@
   import AuthorBlock from '$lib/components/AuthorBlock.svelte'
   import AuthorCard from '$lib/components/AuthorCard.svelte'
   import SanityImage from '$lib/components/SanityImage.svelte'
-  import PostSidebar from '$lib/components/PostSidebar.svelte';
 
   export let post
 </script>
@@ -35,32 +34,36 @@
 <svelte:head>
   <title>{post.title}</title>
 </svelte:head>
-<main class="container max-w-3xl mx-auto xl:max-w-5xl px-4 xl:px-0">
-  <article class="relative flex flex-col md:px-4 xl:grid xl:grid-cols-4 xl:col-gap-6">
-    <div class="pb-4 md:mr-8 xl:pb-0 xl:mb-8 xl:col-span-3 mt-4 xl:mt-10">
-      <h2 class="text-3xl xl:text-4xl font-bold mb-4 text-white leading-snug xl:leading-snug" >{post.title}</h2>
-    </div>
-    <div
-      class="order-1 space-y-16 md:mr-8 xl:order-none xl:col-span-3 prose lg:prose-lg dark:prose-dark">
-      <PortableText
-      blocks={post.body}
-      serializers={{
-        types: {
-          code: Code,
-          image: ImageBlock,
-          authorReference: AuthorBlock
-        },
-        marks: {
-          link: Link
-        }
-      }}
-    />
 
+<h1>{post.title}</h1>
+<p>
+  Published {new Date(post.publishedAt).toLocaleDateString('en', {
+    month: 'long',
+    day: '2-digit',
+    year: 'numeric'
+  })}
+</p>
 
+{#each post.authors || [] as author}
+  <AuthorCard {author} />
+{/each}
 
-      <hr class="border-gray-200 dark:border-gray-800" />
+<hr />
 
-    </div>
-    <PostSidebar {post}/>
-  </article>
-</main>
+{#if post.image}
+  <SanityImage image={post.image} />
+{/if}
+
+<PortableText
+  blocks={post.body}
+  serializers={{
+    types: {
+      code: Code,
+      image: ImageBlock,
+      authorReference: AuthorBlock
+    },
+    marks: {
+      link: Link
+    }
+  }}
+/>
