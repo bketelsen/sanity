@@ -12,7 +12,7 @@
 
 {#if image}
   <img
-    loading="lazy"
+
     src={urlFor(image).width(maxWidth).fit('fillmax').auto('format')}
     alt={alt || image.alt || ''}
     class={classes}
