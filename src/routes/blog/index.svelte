@@ -18,7 +18,7 @@
 	import PageTitle from '$lib/components/PageTitle.svelte';
 	import PageWrapper from '$lib/components/PageWrapper.svelte';
 	import BlogCards from '$lib/components/BlogCards.svelte';
-	import dateFormat from 'date-fns/format';
+	import dateFormat from 'date-fns/format/index.js';
 	export let postsByMonth;
 	export let page;
 
