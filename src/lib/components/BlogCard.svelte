@@ -1,7 +1,6 @@
 <script>
     export let post;
     import SanityImage from './SanityImage.svelte'
-
 </script>
 <div class="p-4 md:w-1/3">
     <div class="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
@@ -9,11 +8,19 @@
         <SanityImage image={post.coverImage} maxWidth={402} alt={post.title} classes="lg:h-48 md:h-36 w-full object-cover object-center"/>
 
         <div class="p-6">
-            <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">CATEGORY</h2>
+            {#each post.categories || [] as cat }
+            <span class="tracking-widest text-xs title-font font-medium text-gray-300 mb-1 uppercase">{cat.title}</span>
+            {/each}
+            {#each post.technologies || [] as tech }
+            <span class="tracking-widest text-xs title-font font-medium text-gray-300 mb-1 uppercase">{tech.title}</span>
+            {/each}
             <h1 class="title-font text-lg font-medium text-white mb-3">{post.title}</h1>
             <p class="leading-relaxed mb-3">
                 {post.excerpt ? post.excerpt : ""}
             </p>
+            {#each post.tags || [] as tag }
+            <span class="tracking-widest text-xs title-font font-medium text-gray-300 mb-1 uppercase">{tag.title}</span>
+            {/each}
             <div class="flex items-center flex-wrap ">
                 <a href={`/blog/${post.slug}`} class="text-blue-400 inline-flex items-center md:mb-2 lg:mb-0"
                     >Read Now

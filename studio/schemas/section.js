@@ -22,7 +22,6 @@ export default {
       title: 'Description',
       type: 'text'
     },
-
     {
       name: 'weight',
       title: 'Weight',

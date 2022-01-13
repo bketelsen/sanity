@@ -1,5 +1,8 @@
-import {AUTHOR_CARD_FRAGMENT, getPostsQuery,pageQuery} from '$lib/queries'
-import {client} from '$lib/sanityClient'
+import { getPostsQuery,pageQuery} from '$lib/queries'
+import { client } from '$lib/sanityClient'
+import formatISO9075 from 'date-fns/formatISO9075';
+import isSameMonth from 'date-fns/isSameMonth';
+import isSameYear from 'date-fns/isSameYear';
 
 // Fetch all valid posts & authors to display in the homepage
 export async function get() {
@@ -9,11 +12,12 @@ export async function get() {
   }`,
     { slug: "/blog" })
 
-
+  const { page, posts } = data;
+  const postsByMonth = getPostsByMonth(posts)
   if (data) {
     return {
       status: 200,
-      body: data
+      body: {page,  postsByMonth}
     }
   }
 
@@ -21,4 +25,26 @@ export async function get() {
     status: 500,
     body: new Error('Internal Server Error')
   }
+}
+function getPostsByMonth(posts) {
+  return posts.reduce((postsByDate, post) => {
+    const exists = postsByDate.find((p) => {
+      const newDate = new Date(post.date);
+      const existingDate = new Date(p.date);
+      return isSameMonth(newDate, existingDate) && isSameYear(newDate, existingDate);
+    });
+
+    if (exists) {
+      exists.posts.push(post);
+    } else {
+      const date = new Date(post.date);
+
+      postsByDate.push({
+        date: formatISO9075(date, { representation: 'date' }),
+        posts: [post]
+      });
+    }
+
+    return postsByDate;
+  }, []);
 }

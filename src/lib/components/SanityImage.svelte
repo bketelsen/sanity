@@ -5,8 +5,6 @@
   export let maxWidth = 1200
   export let alt = undefined
   export let classes
-
-console.log(image.metadata)
 </script>
 
 {#if image}

@@ -1,6 +1,6 @@
 export default {
-  name: 'category',
-  title: 'Category',
+  name: 'technology',
+  title: 'Technology',
   type: 'document',
   fields: [
     {
@@ -29,21 +29,16 @@ export default {
       validation: Rule => Rule.required().min(2),
     },
     {
-      name: 'weight',
-      title: 'Weight',
-      type: 'number',
-    },
-    {
       name: 'externalReferences',
       title: 'External References',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'externalReference' } }],
+      of: [ { type: 'externalReference' } ],
     },
     {
       name: 'externalArticles',
       title: 'External Articles',
       type: 'array',
-      of: [ { type: 'externalReference' }],
-    },
+      of: [{ type: 'externalReference' } ],
+    }
   ]
 }

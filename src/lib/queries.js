@@ -19,6 +19,9 @@ export function getPostsQuery(extraFilter) {
       "numberOfCharacters": length(pt::text(body)),
       "estimatedWordCount": round(length(pt::text(body)) / 5),
       "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
+      'categories': categories[]->{title,slug,icon},
+      'tags': tags[]->{title,slug,icon},
+      'technologies': technologies[]->{title,slug,icon}
   }`
 }
 

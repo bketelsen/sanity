@@ -72,30 +72,10 @@ export default {
       description: '@facebook'
     },
     {
-      name: 'youtube',
-      title: 'YouTube',
-      type: 'string',
-      description: '@youtube'
-    },
-    {
-      name: 'twitch',
-      title: 'Twitch',
-      type: 'string',
-      description: '@twitch'
-    },
-    {
-      name: 'linkedin',
-      title: 'LinkedIn',
-      type: 'string',
-      description: '@linkedin'
-    },
-    {
       name: 'image',
-      title: 'Image',
-      type: 'image',
-      options: {
-        hotspot: true
-      }
+      type: 'mainImage',
+      title: 'Event image',
+      description: 'The highest resolution'
     },
     {
       name: 'bio',
