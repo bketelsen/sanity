@@ -1,8 +1,8 @@
 import { getPostsQuery,pageQuery} from '$lib/queries'
 import { client } from '$lib/sanityClient'
-import formatISO9075 from 'date-fns/formatISO9075';
-import isSameMonth from 'date-fns/isSameMonth';
-import isSameYear from 'date-fns/isSameYear';
+import formatISO9075 from 'date-fns/formatISO9075/index.js';
+import isSameMonth from 'date-fns/isSameMonth/index.js';
+import isSameYear from 'date-fns/isSameYear/index.js';
 
 // Fetch all valid posts & authors to display in the homepage
 export async function get() {
