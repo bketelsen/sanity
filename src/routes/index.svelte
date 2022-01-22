@@ -16,11 +16,13 @@
 	import PageTitle from '$lib/components/PageTitle.svelte';
 	import PageWrapper from '$lib/components/PageWrapper.svelte';
 	import Sections from '$lib/components/Sections.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	export let sections;
 	export let page;
+	export let global;
 </script>
 
-
+<SEO page={page} global={global} />
 <PageWrapper >
 		<PageTitle {...page} />
 		<Sections {sections} />
