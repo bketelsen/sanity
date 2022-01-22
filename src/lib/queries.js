@@ -14,14 +14,14 @@ export function getPostsQuery(extraFilter) {
     'date': publishedAt,
     excerpt,
     'slug': slug.current,
-    'coverImage': mainImage.asset->,
-      'author': author->{name, twitter, image},
-      "numberOfCharacters": length(pt::text(body)),
-      "estimatedWordCount": round(length(pt::text(body)) / 5),
-      "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
-      'categories': categories[]->{title,slug,icon},
-      'tags': tags[]->{title,slug,icon},
-      'technologies': technologies[]->{title,slug,icon}
+    'image': {"caption": image.caption, "alt": image.alt, "asset": image.image.asset->},
+    'author': author->{name, twitter, image},
+    "numberOfCharacters": length(pt::text(body)),
+    "estimatedWordCount": round(length(pt::text(body)) / 5),
+    "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
+    'categories': categories[]->{title,slug,icon},
+    'tags': tags[]->{title,slug,icon},
+    'technologies': technologies[]->{title,slug,icon}
   }`
 }
 

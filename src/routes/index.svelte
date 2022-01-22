@@ -20,7 +20,7 @@
 	export let page;
 </script>
 
-?
+
 <PageWrapper >
 		<PageTitle {...page} />
 		<Sections {sections} />

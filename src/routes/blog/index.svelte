@@ -22,7 +22,6 @@
 	export let postsByMonth;
 	export let page;
 
-	console.log(postsByMonth)
 </script>
 
 <PageWrapper>
