@@ -5,6 +5,7 @@
 {#if author.twitter}
 	<a href={author.twitter} class="ml-3 text-gray-400">
 		<svg
+			alt="Twitter"
 			fill="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
@@ -22,6 +23,7 @@
 {#if author.instagram}
 	<a href={author.instagram} class="ml-3 text-gray-400">
 		<svg
+			alt="Instagram"
 			fill="none"
 			stroke="currentColor"
 			stroke-linecap="round"
@@ -38,6 +40,7 @@
 {#if author.linkedin}
 	<a href={author.linkedin} class="ml-3 text-gray-400">
 		<svg
+			alt="LinkedIn"
 			fill="currentColor"
 			stroke="currentColor"
 			stroke-linecap="round"

@@ -8,9 +8,7 @@ export function coalesce(global, page, post) {
     if (post) {
         type = 'article';
     }
-    let props = {
-
-    }
+    let props = {}
     props.openGraph = {
         title: title,
         description: description,
