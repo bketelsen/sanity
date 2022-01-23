@@ -4,10 +4,10 @@ import {client} from '$lib/sanityClient'
 // Fetch all valid posts & authors to display in the homepage
 export async function get() {
   const data = await client.fetch(/* groq */ `{
-    ${globalQuery},
+
     ${pageQuery}
   }`,
-    { slug: "/elsewhere" }
+    { slug: "elsewhere" }
 )
 
   if (data) {

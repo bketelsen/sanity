@@ -1,5 +1,6 @@
 <script context="module">
 	export async function load({ fetch }) {
+
 		try {
 			const res = await fetch('/global.json');
 			const data = await res.json();
@@ -15,8 +16,14 @@
 <script>
 	export let global;
 	export let sections;
-	import Footer from '$lib/components/Footer.svelte';
 	import '../app.css';
+
+	import Footer from '$lib/components/Footer.svelte';
+	import { globalStore } from '$lib/stores/global';
+	import { sectionStore } from '$lib/stores/sections';
+
+	$globalStore = global;
+	$sectionStore = sections;
 </script>
 
 <div class="flex flex-col h-screen justify-between">

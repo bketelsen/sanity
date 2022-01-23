@@ -17,13 +17,16 @@
 	import PageWrapper from '$lib/components/PageWrapper.svelte';
 	import Sections from '$lib/components/Sections.svelte';
 	import SEO from '$lib/components/SEO.svelte';
-	export let sections;
+	import { globalStore } from '$lib/stores/global';
+	import { sectionStore } from '$lib/stores/sections';
+
+
 	export let page;
-	export let global;
+
 </script>
 
-<SEO page={page} global={global} />
+<SEO page={page} global={$globalStore} />
 <PageWrapper >
 		<PageTitle {...page} />
-		<Sections {sections} />
+		<Sections sections={$sectionStore} />
 </PageWrapper>

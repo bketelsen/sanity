@@ -1,5 +1,4 @@
 export function coalesce(global, page, post) {
-
     let props = {}
 
     let title = post?.title || page?.seo.metaTitle || global?.defaultSeo?.metaTitle;
@@ -28,10 +27,10 @@ export function coalesce(global, page, post) {
         },
         images: [
             {
-                url: "https://www.example.com/images/cover.jpg",
-                width: 850,
-                height: 650,
-                alt: "Og Image Alt",
+                url: "https://og-sooty.vercel.app/api/open-graph-image?path=/brian.dev/blog/switchers",
+                width: 1200,
+                height: 630,
+                alt: title,
             },
         ],
     }

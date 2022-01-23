@@ -7,11 +7,10 @@ import isSameYear from 'date-fns/isSameYear/index.js';
 // Fetch all valid posts & authors to display in the homepage
 export async function get() {
   const data = await client.fetch(/* groq */ `{
-    ${globalQuery},
     ${pageQuery},
 		"posts": ${getPostsQuery()}
   }`,
-    { slug: "/blog" })
+    { slug: "blog" })
 
   const { page, posts,global } = data;
   const postsByMonth = getPostsByMonth(posts)

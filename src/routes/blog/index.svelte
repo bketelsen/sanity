@@ -20,13 +20,15 @@
 	import BlogCards from '$lib/components/BlogCards.svelte';
 	import dateFormat from 'date-fns/format/index.js';
 	import SEO from '$lib/components/SEO.svelte';
+		import { globalStore } from '$lib/stores/global';
+
 
 	export let postsByMonth;
 	export let page;
-	export let global;
+
 
 </script>
-<SEO page={page} global={global} />
+<SEO page={page} global={$globalStore} />
 
 <PageWrapper>
 	<PageTitle {...page} />

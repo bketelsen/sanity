@@ -28,13 +28,15 @@
   import AuthorCard from '$lib/components/AuthorCard.svelte'
   import SanityImage from '$lib/components/SanityImage.svelte'
   import PostSidebar from '$lib/components/PostSidebar.svelte';
+	import SEO from '$lib/components/SEO.svelte';
+		import { globalStore } from '$lib/stores/global';
 
   export let post
 </script>
 
-<svelte:head>
-  <title>{post.title}</title>
-</svelte:head>
+
+<SEO post={post} global={$globalStore} />
+
 <main class="container max-w-3xl mx-auto xl:max-w-5xl px-4 xl:px-0">
   <article class="relative flex flex-col md:px-4 xl:grid xl:grid-cols-4 xl:col-gap-6">
     <div class="pb-4 md:mr-8 xl:pb-0 xl:mb-8 xl:col-span-3 mt-4 xl:mt-10">
