@@ -29,12 +29,12 @@
 <div class="flex flex-col h-screen justify-between">
 	<header class="text-gray-400 bg-gray-900 body-font">
 		<div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-			<a href="/" class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+			<a sveltekit:prefetch href="/" class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
 				<span class="ml-3 text-xl">{global.headerTitle}</span>
 			</a>
 			<nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
 				{#each sections as section}
-				<a href='/{section.slug.current}' class="mr-5 hover:text-white">{section.title}</a>
+				<a sveltekit:prefetch href='/{section.slug.current}' class="mr-5 hover:text-white">{section.title}</a>
 				{/each}
 
 			</nav>

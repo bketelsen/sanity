@@ -33,7 +33,7 @@
 				>
 			{/each}
 			<div class="flex items-center flex-wrap ">
-				<a
+				<a sveltekit:prefetch
 					href={`/blog/${post.slug}`}
 					class="text-blue-400 inline-flex items-center md:mb-2 lg:mb-0"
 					>Read Now
