@@ -3,10 +3,10 @@
 	export async function load({ fetch }) {
 		try {
 			const res = await fetch('/blog/all.json');
-			const { page, postsByMonth } = await res.json();
+			const { global, page, postsByMonth } = await res.json();
 
 			return {
-				props: { postsByMonth, page }
+				props: { postsByMonth, page , global}
 			};
 		} catch (err) {
 			console.log('500:', err);
@@ -19,10 +19,14 @@
 	import PageWrapper from '$lib/components/PageWrapper.svelte';
 	import BlogCards from '$lib/components/BlogCards.svelte';
 	import dateFormat from 'date-fns/format/index.js';
+	import SEO from '$lib/components/SEO.svelte';
+
 	export let postsByMonth;
 	export let page;
+	export let global;
 
 </script>
+<SEO page={page} global={global} />
 
 <PageWrapper>
 	<PageTitle {...page} />

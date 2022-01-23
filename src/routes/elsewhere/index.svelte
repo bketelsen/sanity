@@ -1,15 +1,28 @@
-<script>
-	import TitleBlock from '$lib/components/TitleBlock.svelte';
+<script context="module">
+	export async function load({ fetch }) {
+		try {
+			const res = await fetch('/elsewhere/elsewhere.json');
+			const data = await res.json();
+			return {
+				props: data
+			};
+		} catch (err) {
+			console.log('500:', err);
+		}
+	}
 </script>
 
-<TitleBlock
-	category="Elsewhere"
-	title="Around the Web"
-	description="Talks, Presentations, Articles, Videos and More"
-/>
+<script>
+	import PageTitle from '$lib/components/PageTitle.svelte';
+	import PageWrapper from '$lib/components/PageWrapper.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 
-<section class="text-gray-400 bg-gray-900 body-font">
-	<div class="container px-5 pt-5 mx-auto">
+	export let global;
+	export let page;
+</script>
+<SEO page={page} global={global} />
+<PageWrapper>
+	<PageTitle {...page} />
 		<div class="flex flex-wrap -m-4">
 			<div class="p-4 lg:w-1/3">
 				<div
@@ -210,5 +223,4 @@
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
+</PageWrapper>

@@ -1,4 +1,4 @@
-import { getPostsQuery,pageQuery} from '$lib/queries'
+import { getPostsQuery,pageQuery,globalQuery} from '$lib/queries'
 import { client } from '$lib/sanityClient'
 import formatISO9075 from 'date-fns/formatISO9075/index.js';
 import isSameMonth from 'date-fns/isSameMonth/index.js';
@@ -7,17 +7,18 @@ import isSameYear from 'date-fns/isSameYear/index.js';
 // Fetch all valid posts & authors to display in the homepage
 export async function get() {
   const data = await client.fetch(/* groq */ `{
+    ${globalQuery},
     ${pageQuery},
 		"posts": ${getPostsQuery()}
   }`,
     { slug: "/blog" })
 
-  const { page, posts } = data;
+  const { page, posts,global } = data;
   const postsByMonth = getPostsByMonth(posts)
   if (data) {
     return {
       status: 200,
-      body: {page,  postsByMonth}
+      body: {global, page,  postsByMonth}
     }
   }
 

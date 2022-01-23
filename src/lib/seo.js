@@ -1,14 +1,15 @@
 export function coalesce(global, page, post) {
-    console.log("global", global);
-    console.log("page", page);
-    console.log("post", post);
-    let title = post?.title || page?.title || global?.defaultSeo?.metaTitle;
+
+    let props = {}
+
+    let title = post?.title || page?.seo.metaTitle || global?.defaultSeo?.metaTitle;
     let description = post?.excerpt || page?.seo?.metaDescription || global?.defaultSeo?.metaDescription;
+    title = title + " | " + global?.siteName;
     let type = 'website';
     if (post) {
+
         type = 'article';
     }
-    let props = {}
     props.openGraph = {
         title: title,
         description: description,

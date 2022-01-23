@@ -7,7 +7,6 @@
 
     const props = coalesce(global,page,post)
     // global > page > post
-    console.log(props)
 </script>
 
 <SvelteSeo
