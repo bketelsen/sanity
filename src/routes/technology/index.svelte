@@ -2,11 +2,11 @@
 	export const prerender = true;
 	export async function load({ fetch }) {
 		try {
-			const res = await fetch('/blog/all.json');
-			const {  page, postsByMonth } = await res.json();
+			const res = await fetch('/technology/all.json');
+			const { page, technologies } = await res.json();
 
 			return {
-				props: { postsByMonth, page }
+				props: { technologies, page}
 			};
 		} catch (err) {
 			console.log('500:', err);
@@ -17,13 +17,13 @@
 <script>
 	import PageTitle from '$lib/components/PageTitle.svelte';
 	import PageWrapper from '$lib/components/PageWrapper.svelte';
-	import BlogCards from '$lib/components/BlogCards.svelte';
-	import dateFormat from 'date-fns/format/index.js';
+	import TechCards from '$lib/components/TechCards.svelte';
+
 	import SEO from '$lib/components/SEO.svelte';
 	import { globalStore } from '$lib/stores/global';
 
 
-	export let postsByMonth;
+	export let technologies;
 	export let page;
 
 
@@ -32,9 +32,6 @@
 
 <PageWrapper>
 	<PageTitle {...page} />
-	{#each postsByMonth as month }
-    <h1 class="sm:text-3xl text-2xl font-medium title-font mt-8 mb-4 text-white">
-		{dateFormat(new Date(month.date), 'MMMM yyyy')}</h1>
-	<BlogCards posts={month.posts} />
-	{/each}
+	<TechCards {technologies} />
+
 </PageWrapper>
