@@ -15,8 +15,7 @@ const config = {
 		  colors: {
 			amber: colors.amber,
 			fuchsia: colors.fuchsia,
-			prose: '#374151',
-			time: '#6B7280',
+				time: '#6B7280',
 			openvpn: {
 			  100: '#FFF4E6',
 			  200: '#FFE4BF',

@@ -39,7 +39,7 @@
 			</h2>
 		</div>
 		<div
-			class="order-1 space-y-16 md:mr-8 xl:order-none xl:col-span-3 prose lg:prose-lg dark:prose-dark"
+			class="order-1 space-y-16 md:mr-8 xl:order-none xl:col-span-3 prose text-gray-300 lg:prose-lg "
 		>
 			<p class="leading-relaxed mb-3">
 				{tech.description}
