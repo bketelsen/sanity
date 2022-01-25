@@ -12,8 +12,8 @@
 		class="sticky top-0 flex flex-col items-start pt-4 border-t border-gray-200 dark:border-gray-800 xl:pl-4 sm:flex-row xl:border-l xl:border-t-0 xl:space-y-8 xl:block"
 	>
 	{#each post.technologies as tech}
-	<a href="/technology/{tech.slug.current}">
-		<Icon kind={tech.iconName} title={tech.title} className="mx-5 mb-5"/>
+	<a sveltekit:prefetch href="/technology/{tech.slug.current}">
+		<Icon kind={tech.iconName} title={tech.title} className="mx-5 mb-5 hover:border hover:border-white"/>
 	</a>
 	{/each}
 
