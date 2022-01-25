@@ -13,7 +13,7 @@
 	>
 	{#each post.technologies as tech}
 	<a href="/technology/{tech.slug.current}">
-		<Icon kind="apple" title={tech.title} className="mx-5 mb-5"/>
+		<Icon kind={tech.iconName} title={tech.title} className="mx-5 mb-5"/>
 	</a>
 	{/each}
 

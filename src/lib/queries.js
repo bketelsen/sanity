@@ -21,7 +21,7 @@ export function getPostsQuery(extraFilter) {
     "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
     'categories': categories[]->{title,slug,icon},
     'tags': tags[]->{title,slug,icon},
-    'technologies': technologies[]->{title,slug,icon}
+    'technologies': technologies[]->{title,slug,iconName}
   }`
 }
 

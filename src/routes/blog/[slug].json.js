@@ -10,7 +10,7 @@ export async function get({params: {slug}}) {
 		},
     'categories': categories[]->{title,slug,icon},
     'tags': tags[]->{title,slug,icon},
-    'technologies': technologies[]->{title,slug,icon},
+    'technologies': technologies[]->{title,slug,iconName},
     body[] {
       ...,
 			children[] {
