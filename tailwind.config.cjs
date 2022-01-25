@@ -1,277 +1,229 @@
 const colors = require('tailwindcss/colors');
 
 const config = {
-	content: ['./src/**/*.{html,js,svelte,ts}'],
+  content: ['./src/**/*.{html,js,svelte,ts}'],
 
-	theme: {
-		extend: {
-		  fontFamily: {
-			'open-sans': 'Open Sans, sans-serif',
-			'source-sans-pro': 'Source Sans pro, sans-serif'
-		  },
-		  lineHeight: {
-			14: '3rem'
-		  },
-		  colors: {
-			amber: colors.amber,
-			fuchsia: colors.fuchsia,
-				time: '#6B7280',
-			openvpn: {
-			  100: '#FFF4E6',
-			  200: '#FFE4BF',
-			  300: '#FFD399',
-			  400: '#FFB24D',
-			  500: '#FF9100',
-			  600: '#E68300',
-			  700: '#995700',
-			  800: '#734100',
-			  900: '#4D2C00'
-			},
-			raspberrypi: {
-			  100: '#F9E8ED',
-			  200: '#F0C6D2',
-			  300: '#E7A4B7',
-			  400: '#D56080',
-			  500: '#C31C4A',
-			  600: '#B01943',
-			  700: '#75112C',
-			  800: '#580D21',
-			  900: '#3B0816'
-			},
-			vscode: {
-			  100: '#ECF6FE',
-			  200: '#CFE9FC',
-			  300: '#B2DCFA',
-			  400: '#79C2F6',
-			  500: '#3FA8F2',
-			  600: '#3997DA',
-			  700: '#266591',
-			  800: '#1C4C6D',
-			  900: '#133249'
-			},
-			vultr: {
-			  100: '#E6F2FF',
-			  200: '#BFDEFE',
-			  300: '#99CAFE',
-			  400: '#4DA3FD',
-			  500: '#007BFC',
-			  600: '#006FE3',
-			  700: '#004A97',
-			  800: '#003771',
-			  900: '#00254C'
-			},
-			ubuntu: {
-			  100: '#FDEEE9',
-			  200: '#FAD4C7',
-			  300: '#F6BBA6',
-			  400: '#F08763',
-			  500: '#E95420',
-			  600: '#D24C1D',
-			  700: '#8C3213',
-			  800: '#69260E',
-			  900: '#46190A'
-			},
-			twitter: {
-			  100: '#E8F6FE',
-			  200: '#C7E8FC',
-			  300: '#A5D9FA',
-			  400: '#61BDF6',
-			  500: '#1DA1F2',
-			  600: '#1A91DA',
-			  700: '#116191',
-			  800: '#0D486D',
-			  900: '#093049'
-			},
-			github: {
-			  100: '#E9EAEA',
-			  200: '#C9CACB',
-			  300: '#A8AAAB',
-			  400: '#666A6D',
-			  500: '#252A2E',
-			  600: '#212629',
-			  700: '#16191C',
-			  800: '#111315',
-			  900: '#0B0D0E'
-			},
-			rss: {
-			  100: '#FEF4ED',
-			  200: '#FEE3D1',
-			  300: '#FDD2B6',
-			  400: '#FBB17F',
-			  500: '#F98F48',
-			  600: '#E08141',
-			  700: '#95562B',
-			  800: '#704020',
-			  900: '#4B2B16'
-			},
-			linkedin: {
-			  100: '#E6F1F8',
-			  200: '#BFDDED',
-			  300: '#99C9E1',
-			  400: '#4DA0CB',
-			  500: '#0077B5',
-			  600: '#006BA3',
-			  700: '#00476D',
-			  800: '#003651',
-			  900: '#002436'
-			},
-			hackernews: {
-			  100: '#FFEEE6',
-			  200: '#FFD6BF',
-			  300: '#FFBD99',
-			  400: '#FE8B4D',
-			  500: '#FE5900',
-			  600: '#E55000',
-			  700: '#983500',
-			  800: '#722800',
-			  900: '#4C1B00'
-			},
-			netlify: {
-			  100: '#f0fffe',
-			  200: '#9ffef6',
-			  300: '#53fef0',
-			  400: '#01fee9',
-			  500: '#01ac9e',
-			  600: '#018e82',
-			  700: '#017066',
-			  800: '#00514a',
-			  900: '#00332f'
-			},
-			serverless: {
-			  100: '#fff0f0',
-			  200: '#fec9c8',
-			  300: '#fea29f',
-			  400: '#fd7b77',
-			  500: '#fd544f',
-			  600: '#fc1008',
-			  700: '#c00902',
-			  800: '#790501',
-			  900: '#320201'
-			},
-			html: {
-			  100: '#fdf5f1',
-			  200: '#f8d0bf',
-			  300: '#f2ab8c',
-			  400: '#ec865a',
-			  500: '#e7642c',
-			  600: '#c54b16',
-			  700: '#933811',
-			  800: '#60240b',
-			  900: '#2e1105'
-			},
-			'react-gray': {
-			  100: '#f6f7f8',
-			  200: '#bdc2cc',
-			  300: '#868fa2',
-			  400: '#545d6d',
-			  500: '#282c34',
-			  600: '#23272e',
-			  700: '#1f2228',
-			  800: '#1b1d23',
-			  900: '#16181d'
-			},
-			react: {
-			  100: '#f5fdff',
-			  200: '#d7f6fe',
-			  300: '#b4edfd',
-			  400: '#92e5fc',
-			  500: '#65dbfb',
-			  600: '#0bc5f9',
-			  700: '#05addb',
-			  800: '#048db3',
-			  900: '#03627c'
-			}
-		  },
-		  typography: (theme) => ({
-			DEFAULT: {
-			  css: {
-				pre: {
-				  maxWidth: '100vw',
-				  borderRadius: 0
-				},
-				'pre code': {
-				  'word-break': 'normal'
-				},
-				'pre code::after': {
-				  content: 'none'
-				},
-				code: {
-				  'word-break': 'break-word'
-				},
-				a: {
-				  'word-break': 'break-word',
-				  textDecoration: 'none',
-				  color: theme('colors.indigo.500'),
-				  '&:hover': {
-					color: theme('colors.indigo.600')
-				  },
-				  '&:visited': {
-					color: theme('colors.indigo.800')
-				  }
-				}
-			  }
-			},
-			dark: {
-			  css: {
-				color: theme('colors.gray.200'),
-				strong: {
-				  color: theme('colors.gray.100')
-				},
-				blockquote: {
-				  color: theme('colors.gray.200'),
-				  backgroundColor: theme('colors.gray.800'),
-				  paddingTop: theme('spacing.4'),
-				  paddingBottom: theme('spacing.4'),
-				  borderTopRightRadius: theme('borderRadius.md'),
-				  borderBottomRightRadius: theme('borderRadius.md'),
-				  '> p': {
-					margin: 0
-				  }
-				},
-				h1: {
-				  color: theme('colors.gray.100')
-				},
-				h2: {
-				  color: theme('colors.gray.100')
-				},
-				h3: {
-				  color: theme('colors.gray.100')
-				},
-				h4: {
-				  color: theme('colors.gray.100')
-				},
-				h5: {
-				  color: theme('colors.gray.100')
-				},
-				h6: {
-				  color: theme('colors.gray.100')
-				},
-				a: {
-				  color: theme('colors.indigo.500'),
-				  '&:hover': {
-					color: theme('colors.indigo.600')
-				  },
-				  '&:visited': {
-					color: theme('colors.indigo.700')
-				  }
-				},
-				code: {
-				  color: theme('colors.gray.200')
-				},
-				hr: {
-				  borderColor: theme('colors.gray.800')
-				}
-			  }
-			}
-		  })
-		}
-	  },
-	  variants: {
-		extend: { typography: ['dark'], translate: ['group-hover'] }
-	  },
+  theme: {
+    extend: {
+      fontFamily: {
+        'open-sans': 'Open Sans, sans-serif',
+        'source-sans-pro': 'Source Sans pro, sans-serif'
+      },
+      lineHeight: {
+        14: '3rem'
+      },
+      colors: {
+        gray: {
+          '50': '#f9fafb',
+          '100': '#f0f1f3',
+          '200': '#d9dbdf',
+          '300': '#b7bbc2',
+          '400': '#8f959f',
+          '500': '#6e7582',
+          '600': '#555e6e',
+          '700': '#3e4859',
+          '800': '#283242',
+          '900': '#131f30',
+        },
+        cerise: {
+          '50': '#fff6f6',
+          '100': '#ffefef',
+          '200': '#f9d3d3',
+          '300': '#eaa6a6',
+          '400': '#e56d6d',
+          '500': '#d93c3e',
+          '600': '#bd0e0f',
+          '700': '#930705',
+          '800': '#680605',
+          '900': '#470201',
+        },
+        orange: {
+          '50': '#fff8f1',
+          '100': '#fbecdf',
+          '200': '#f6d7bf',
+          '300': '#e5ad8b',
+          '400': '#d67a4a',
+          '500': '#c4540b',
+          '600': '#9c4303',
+          '700': '#713707',
+          '800': '#4a2702',
+          '900': '#2c1b01',
+        },
+        lemon: {
+          '50': '#fdfdea',
+          '100': '#fdf6be',
+          '200': '#f5e27b',
+          '300': '#d9bd2f',
+          '400': '#b6930d',
+          '500': '#967100',
+          '600': '#805501',
+          '700': '#643e02',
+          '800': '#422a00',
+          '900': '#271a00',
+        },
+        green: {
+          '50': '#f3faf7',
+          '100': '#daf5eb',
+          '200': '#b6e5d3',
+          '300': '#85c8ac',
+          '400': '#3ca773',
+          '500': '#108835',
+          '600': '#016d00',
+          '700': '#005301',
+          '800': '#003906',
+          '900': '#072408',
+        },
+        leaf: {
+          '50': '#edfafa',
+          '100': '#d5f5f6',
+          '200': '#aae7ea',
+          '300': '#69c8ce',
+          '400': '#13a2ad',
+          '500': '#0d828d',
+          '600': '#056874',
+          '700': '#06505c',
+          '800': '#043744',
+          '900': '#01222f',
+        },
+        azure: {
+          '50': '#f4faff',
+          '100': '#e2f0ff',
+          '200': '#c4defe',
+          '300': '#95bbee',
+          '400': '#5e95e4',
+          '500': '#2173e6',
+          '600': '#1358cc',
+          '700': '#1242a2',
+          '800': '#1a2e6c',
+          '900': '#161d38',
+        },
+        blue: {
+          '50': '#f5f8ff',
+          '100': '#e5edff',
+          '200': '#ccdafc',
+          '300': '#a5b8e9',
+          '400': '#7c91e1',
+          '500': '#5c69e9',
+          '600': '#4a46e1',
+          '700': '#3a31b9',
+          '800': '#282284',
+          '900': '#191452',
+        },
+        indigo: {
+          '50': '#faf9ff',
+          '100': '#f1effe',
+          '200': '#dcd7fc',
+          '300': '#bcb2f2',
+          '400': '#9e86e5',
+          '500': '#895ddb',
+          '600': '#8335c8',
+          '700': '#6620a9',
+          '800': '#48147b',
+          '900': '#2f0d4d',
+        },
+        cerise: {
+          '50': '#fff5fb',
+          '100': '#fdeaf5',
+          '200': '#fbd2e9',
+          '300': '#e9a7cc',
+          '400': '#de6ea8',
+          '500': '#d53485',
+          '600': '#b90263',
+          '700': '#90084c',
+          '800': '#5e1734',
+          '900': '#301820',
+        },
+      },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            pre: {
+              maxWidth: '100vw',
+              borderRadius: 0
+            },
+            'pre code': {
+              'word-break': 'normal'
+            },
+            'pre code::after': {
+              content: 'none'
+            },
+            code: {
+              'word-break': 'break-word'
+            },
+            a: {
+              'word-break': 'break-word',
+              textDecoration: 'none',
+              color: theme('colors.indigo.500'),
+              '&:hover': {
+                color: theme('colors.indigo.600')
+              },
+              '&:visited': {
+                color: theme('colors.indigo.800')
+              }
+            }
+          }
+        },
+        dark: {
+          css: {
+            color: theme('colors.gray.200'),
+            strong: {
+              color: theme('colors.gray.100')
+            },
+            blockquote: {
+              color: theme('colors.gray.200'),
+              backgroundColor: theme('colors.gray.800'),
+              paddingTop: theme('spacing.4'),
+              paddingBottom: theme('spacing.4'),
+              borderTopRightRadius: theme('borderRadius.md'),
+              borderBottomRightRadius: theme('borderRadius.md'),
+              '> p': {
+                margin: 0
+              }
+            },
+            h1: {
+              color: theme('colors.gray.100')
+            },
+            h2: {
+              color: theme('colors.gray.100')
+            },
+            h3: {
+              color: theme('colors.gray.100')
+            },
+            h4: {
+              color: theme('colors.gray.100')
+            },
+            h5: {
+              color: theme('colors.gray.100')
+            },
+            h6: {
+              color: theme('colors.gray.100')
+            },
+            a: {
+              color: theme('colors.indigo.500'),
+              '&:hover': {
+                color: theme('colors.indigo.600')
+              },
+              '&:visited': {
+                color: theme('colors.indigo.700')
+              }
+            },
+            code: {
+              color: theme('colors.gray.200')
+            },
+            hr: {
+              borderColor: theme('colors.gray.800')
+            }
+          }
+        }
+      })
+    }
+  },
+  variants: {
+    extend: { typography: ['dark'], translate: ['group-hover'] }
+  },
 
 
-	plugins: [require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/typography')],
 };
 
 module.exports = config;

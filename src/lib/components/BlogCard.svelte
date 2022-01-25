@@ -14,13 +14,13 @@
 		<div class="p-6">
 			{#each post.categories || [] as cat}
 				<span
-					class="tracking-widest text-xs title-font font-medium text-blue-400 mb-1 mr-3 uppercase"
+					class="tracking-widest text-xs title-font font-medium text-leaf-400 mb-1 mr-3 uppercase"
 					>{cat.title}</span
 				>
 			{/each}
 			{#each post.technologies || [] as tech}
 				<span
-					class="tracking-widest text-xs title-font font-medium text-blue-400 mb-1 mr-3 uppercase"
+					class="tracking-widest text-xs title-font font-medium text-leaf-400 mb-1 mr-3 uppercase"
 					><a href="/technology/{tech.slug.current}">{tech.title}</a></span
 				>
 			{/each}
