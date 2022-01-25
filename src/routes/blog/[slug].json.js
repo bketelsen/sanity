@@ -8,6 +8,9 @@ export async function get({params: {slug}}) {
 		"authors": authors[].author->{
 			${AUTHOR_CARD_FRAGMENT}
 		},
+    'categories': categories[]->{title,slug,icon},
+    'tags': tags[]->{title,slug,icon},
+    'technologies': technologies[]->{title,slug,icon},
     body[] {
       ...,
 			children[] {
