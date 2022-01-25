@@ -1,17 +1,14 @@
 <script>
 	export let tech;
-	import SanityImage from './SanityImage.svelte';
+		import Icon from './Icon.svelte';
+
 
 </script>
 
 <div class="p-4 md:w-1/3">
 	<div class="h-full  bg-gray-900 overflow-hidden">
-		<SanityImage
-			image={tech.icon}
-			maxWidth={402}
-			alt={tech.title}
-			classes="lg:h-48 md:h-36 w-full object-contain object-center"
-		/>
+		<Icon kind={tech.iconName} title={tech.title} className="hover:border hover:border-whitelg:h-48 md:h-36 w-full object-contain object-center"/>
+
 		<div class="p-6">
 
 			<h1 class="title-font text-lg font-medium text-white mb-3">{tech.title}</h1>
