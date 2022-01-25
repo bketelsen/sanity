@@ -23,6 +23,11 @@ export default {
       type: 'text'
     },
     {
+      name: 'iconName',
+      title: 'Icon Name',
+      type: 'string'
+    },
+    {
       name: 'icon',
       title: 'SVG Icon',
       type: 'text',
