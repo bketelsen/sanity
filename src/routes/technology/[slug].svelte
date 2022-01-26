@@ -82,7 +82,7 @@
 			</div>
 			<div class="pb-4 md:mr-8 xl:pb-0 xl:mb-8 xl:col-span-3 mt-4 xl:mt-10">
 				<h3 class="text-xl xl:text-2xl font-bold mb-4 text-mix-600 leading-snug xl:leading-snug">
-					Useful Articles
+					Useful Links
 				</h3>
 				<div>
 					{#each tech.externalArticles as article}
