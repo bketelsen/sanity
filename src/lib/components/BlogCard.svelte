@@ -4,12 +4,15 @@
 </script>
 
 <div class="p-4 md:w-1/3">
-	<div class="h-full  bg-light-100 overflow-hidden">
+					<a
+					sveltekit:prefetch
+					href={`/blog/${post.slug}`}>
+	<div class="h-full rounded-lg cursor-pointer bg-light-100 border border-light-300 hover:shadow-xl hover:shadow-mix-500/70 overflow-hidden">
 		<SanityImage
 			image={post.image.asset}
 			maxWidth={402}
 			alt={post.title}
-			classes="lg:h-48 md:h-36 w-full object-contain object-center"
+			classes="w-full object-contain object-center"
 		/>
 		<div class="p-6">
 			{#each post.categories || [] as cat}
@@ -56,4 +59,5 @@
 			</div>
 		</div>
 	</div>
+</a>
 </div>

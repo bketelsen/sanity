@@ -190,12 +190,12 @@ const config = {
             a: {
               'word-break': 'break-word',
               textDecoration: 'none',
-              color: theme('colors.indigo.500'),
+              color: theme('colors.mix.500'),
               '&:hover': {
-                color: theme('colors.indigo.600')
+                color: theme('colors.mix.600')
               },
               '&:visited': {
-                color: theme('colors.indigo.800')
+                color: theme('colors.mix.800')
               }
             }
           }
