@@ -3,7 +3,7 @@
 </script>
 
 {#if author.twitter}
-	<a href={author.twitter} class="ml-3 text-gray-400">
+	<a href={author.twitter} class="ml-3 text-mix-200">
 		<svg
 			aria-label="Twitter"
 			alt="Twitter"
@@ -22,7 +22,7 @@
 {/if}
 
 {#if author.instagram}
-	<a href={author.instagram} class="ml-3 text-gray-400">
+	<a href={author.instagram} class="ml-3 text-mix-200">
 		<svg
 			aria-label="Instagram"
 			alt="Instagram"
@@ -40,7 +40,7 @@
 	</a>
 {/if}
 {#if author.linkedin}
-	<a href={author.linkedin} class="ml-3 text-gray-400">
+	<a href={author.linkedin} class="ml-3 text-mix-200">
 		<svg
 			aria-label="LinkedIn"
 			alt="LinkedIn"

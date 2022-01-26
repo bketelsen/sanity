@@ -4,7 +4,7 @@
 </script>
 
 <div class="p-4 md:w-1/3">
-	<div class="h-full  bg-gray-900 overflow-hidden">
+	<div class="h-full  bg-light-200 overflow-hidden">
 		<SanityImage
 			image={post.image.asset}
 			maxWidth={402}

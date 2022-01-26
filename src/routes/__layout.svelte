@@ -26,21 +26,21 @@
 	$sectionStore = sections;
 </script>
 
-<div class="flex flex-col h-screen justify-between">
-	<header class="text-gray-400 bg-gray-900 body-font">
+<div class="flex flex-col h-screen justify-between bg-light-100">
+	<header class="text-light-200 bg-mix-600 body-font">
 		<div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-			<a sveltekit:prefetch href="/" class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+			<a sveltekit:prefetch href="/" class="flex title-font font-medium items-center text-light-200 hover:text-white mb-4 md:mb-0">
 				<span class="ml-3 text-xl">{global.headerTitle}</span>
 			</a>
 			<nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
 				{#each sections as section}
-				<a sveltekit:prefetch href='/{section.slug.current}' class="mr-5 hover:text-white">{section.title}</a>
+				<a sveltekit:prefetch href='/{section.slug.current}' class="mr-5 text-light-200 hover:text-white">{section.title}</a>
 				{/each}
 
 			</nav>
 			<a href="/technology">
 			<button
-				class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0"
+				class="inline-flex items-center text-mix-800 bg-light-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0"
 				>Tech Library
 				<svg
 					fill="none"
@@ -58,7 +58,7 @@
 
 		</div>
 	</header>
-	<main class="mb-auto">
+	<main class="mb-auto bg-light-200">
 		<slot />
 	</main>
 
