@@ -6,7 +6,7 @@
 
 	export let kind;
 	export let size = 64;
-	export let color = 'gray';
+	export let color = 'currentColor';
 	export let className = '';
 	export let title;
 

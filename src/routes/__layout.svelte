@@ -58,7 +58,7 @@
 
 		</div>
 	</header>
-	<main class="mb-auto bg-light-200">
+	<main class="mb-auto bg-light-100">
 		<slot />
 	</main>
 

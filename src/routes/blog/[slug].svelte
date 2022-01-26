@@ -41,11 +41,11 @@
 <main class="container max-w-3xl mx-auto xl:max-w-5xl px-4 xl:px-0">
 	<article class="relative flex flex-col md:px-4 xl:grid xl:grid-cols-4 xl:col-gap-6">
 		<div class="pb-4 md:mr-8 xl:pb-0 xl:mb-8 xl:col-span-3 mt-4 xl:mt-10">
-			<h2 class="text-3xl xl:text-4xl font-bold mb-4 text-white leading-snug xl:leading-snug">
+			<h2 class="text-3xl xl:text-4xl font-bold mb-4 text-mix-600 leading-snug xl:leading-snug">
 				{post.title}
 			</h2>
 		</div>
-		<div class="order-1 md:mr-8 xl:order-none xl:col-span-3 prose text-gray-300 lg:prose-lg">
+		<div class="order-1 md:mr-8 xl:order-none xl:col-span-3 prose text-mix-800 lg:prose-lg">
 			<PortableText
 				blocks={post.body}
 				serializers={{
@@ -59,8 +59,6 @@
 					}
 				}}
 			/>
-
-			<hr class="border-gray-200 dark:border-gray-800" />
 		</div>
 		<PostSidebar {post} />
 	</article>
