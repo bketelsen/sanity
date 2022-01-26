@@ -4,7 +4,7 @@
 	export let post;
 	import { DateTime } from 'luxon';
 	import Icon from './Icon.svelte';
-	console.log(post.technologies);
+
 </script>
 
 <aside class="pb-10">

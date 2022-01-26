@@ -1,0 +1,19 @@
+<script>
+  import SanityImage from './SanityImage.svelte'
+
+  export let image;
+  export let maxWidth = 800;
+    export let classes;
+
+
+
+</script>
+
+{#if image.asset}
+  <figure>
+    <SanityImage image={image.asset} {maxWidth} {classes}/>
+    {#if image.caption}
+      <figcaption class="text-center text-mix-600 pt-2 italic">{image.caption}</figcaption>
+    {/if}
+  </figure>
+{/if}

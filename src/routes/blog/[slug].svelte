@@ -28,12 +28,13 @@
 	import ImageBlock from '$lib/components/ImageBlock.svelte';
 	import AuthorBlock from '$lib/components/AuthorBlock.svelte';
 	import AuthorCard from '$lib/components/AuthorCard.svelte';
-	import SanityImage from '$lib/components/SanityImage.svelte';
+	import SanityFigure from '$lib/components/SanityFigure.svelte';
 	import PostSidebar from '$lib/components/PostSidebar.svelte';
 	import SEO from '$lib/components/SEO.svelte';
 	import { globalStore } from '$lib/stores/global';
 
 	export let post;
+
 </script>
 
 <SEO {post} global={$globalStore} />
@@ -44,6 +45,7 @@
 			<h2 class="text-3xl xl:text-4xl font-bold mb-4 text-mix-600 leading-snug xl:leading-snug">
 				{post.title}
 			</h2>
+			<SanityFigure image={post.image} maxWidth={800} alt={post.image.alt}/>
 		</div>
 		<div class="order-1 md:mr-8 xl:order-none xl:col-span-3 prose text-mix-800 lg:prose-lg">
 			<PortableText
