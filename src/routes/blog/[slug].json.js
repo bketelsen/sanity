@@ -12,6 +12,8 @@ export async function get({params: {slug}}) {
     'categories': categories[]->{title,slug,icon},
     'tags': tags[]->{title,slug,icon},
     'technologies': technologies[]->{title,slug,iconName},
+    "estimatedWordCount": round(length(pt::text(body)) / 5),
+    "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
     body[] {
       ...,
 			children[] {

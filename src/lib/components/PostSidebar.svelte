@@ -1,6 +1,4 @@
 <script>
-
-	export let tags, timeToRead;
 	export let post;
 	import { DateTime } from 'luxon';
 	import Icon from './Icon.svelte';
@@ -30,12 +28,11 @@
 					>
 				</dd>
 			</dl>
-			{#if timeToRead > 0}
+			{#if post.estimatedReadingTime > 0}
 				<dl class="mt-4 md:mr-8 xl:mt-0 xl:mr-0">
 					<dt class="font-semibold text-mix-600">Reading time</dt>
 					<dd class="text-mix-500 font-medium leading-6">
-						{timeToRead} Minute
-						{timeToRead > 1 ? 's' : ''}
+						{post.estimatedReadingTime} Minute{post.estimatedReadingTime > 1 ? 's' : ''}
 					</dd>
 				</dl>
 			{/if}
