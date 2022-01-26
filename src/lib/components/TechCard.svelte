@@ -6,7 +6,7 @@
 </script>
 
 <div class="p-4 md:w-1/3">
-	<div class="h-full cursor-pointer bg-light-100 border border-light-300 hover:shadow-xl hover:shadow-mix-500/70 overflow-hidden">
+	<div class="h-full rounded-lg cursor-pointer bg-light-100 border border-light-300 hover:shadow-xl hover:shadow-mix-500/70 overflow-hidden">
 		<Icon kind={tech.iconName} title={tech.title} className="lg:h-48 md:h-36 w-full object-contain object-center"/>
 
 		<div class="p-6">

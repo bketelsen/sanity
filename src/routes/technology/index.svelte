@@ -6,7 +6,7 @@
 			const { page, technologies } = await res.json();
 
 			return {
-				props: { technologies, page}
+				props: { technologies, page }
 			};
 		} catch (err) {
 			console.log('500:', err);
@@ -17,21 +17,23 @@
 <script>
 	import PageTitle from '$lib/components/PageTitle.svelte';
 	import PageWrapper from '$lib/components/PageWrapper.svelte';
-	import TechCards from '$lib/components/TechCards.svelte';
+	import TechCard from '$lib/components/TechCard.svelte';
+	import CardGroup from '$lib/components/CardGroup.svelte';
 
 	import SEO from '$lib/components/SEO.svelte';
 	import { globalStore } from '$lib/stores/global';
 
-
 	export let technologies;
 	export let page;
-
-
 </script>
-<SEO page={page} global={$globalStore} />
+
+<SEO {page} global={$globalStore} />
 
 <PageWrapper>
 	<PageTitle {...page} />
-	<TechCards {technologies} />
-
+	<CardGroup>
+		{#each technologies as tech}
+			<TechCard {tech} />
+		{/each}
+	</CardGroup>
 </PageWrapper>
