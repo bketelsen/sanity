@@ -25,6 +25,7 @@
 
 	export let technologies;
 	export let page;
+	console.log(technologies);
 </script>
 
 <SEO {page} global={$globalStore} />

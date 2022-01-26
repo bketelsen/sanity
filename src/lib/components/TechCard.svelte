@@ -1,23 +1,27 @@
 <script>
 	export let tech;
-		import Icon from './Icon.svelte';
-
-
+	import Icon from './Icon.svelte';
 </script>
 
 <div class="p-4 md:w-1/3">
-	<div class="h-full rounded-lg cursor-pointer bg-light-100 border border-light-300 hover:shadow-xl hover:shadow-mix-500/70 overflow-hidden">
-		<Icon kind={tech.iconName} title={tech.title} className="lg:h-48 md:h-36 w-full object-contain object-center"/>
+	<div
+		class="h-full rounded-lg cursor-pointer bg-light-100 border border-light-300 hover:shadow-xl hover:shadow-mix-500/70 overflow-hidden"
+	>
+		<Icon
+			kind={tech.iconName}
+			title={tech.title}
+			className="lg:h-48 md:h-36 w-full object-contain object-center"
+		/>
 
 		<div class="p-6">
-
 			<h1 class="title-font text-lg font-medium text-cerise-600 mb-3">{tech.title}</h1>
 			<p class="leading-relaxed mb-3">
-				{tech.description }
+				{tech.description}
 			</p>
 
 			<div class="flex items-center flex-wrap ">
-				<a sveltekit:prefetch
+				<a
+					sveltekit:prefetch
 					href={`/technology/${tech.slug.current}`}
 					class="text-mix-700 inline-flex items-center md:mb-2 lg:mb-0"
 					>Explore

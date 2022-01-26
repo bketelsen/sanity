@@ -26,7 +26,7 @@
 	import { globalStore } from '$lib/stores/global';
 
 	export let tech;
-
+	console.log(tech);
 </script>
 
 <SEO global={$globalStore} />
@@ -48,33 +48,54 @@
 			<hr class="border-mix-700 " />
 			<div class="pb-4 md:mr-8 xl:pb-0 xl:mb-8 xl:col-span-3 mt-4 xl:mt-10">
 				<h3 class="text-xl xl:text-2xl font-bold mb-4 text-mix-600 leading-snug xl:leading-snug">
+					Posts
+				</h3>
+				<div>
+					{#each tech.relatedPosts as post}
+						<p class="leading-relaxed mb-3">
+							<a
+								href="/blog/{post.slug.current}"
+								class="ml-4 block font-medium leading-5  focus:outline-none  transition duration-150 ease-in-out"
+							>
+								{post.title}
+							</a>
+						</p>
+					{/each}
+				</div>
+			</div>
+			<div class="pb-4 md:mr-8 xl:pb-0 xl:mb-8 xl:col-span-3 mt-4 xl:mt-10">
+				<h3 class="text-xl xl:text-2xl font-bold mb-4 text-mix-600 leading-snug xl:leading-snug">
 					External Reference Links
 				</h3>
-        <div>
-          {#each tech.externalReferences as reference}
-          			<p class="leading-relaxed mb-3">
-
-          <a href={reference.link} class="ml-4 block font-medium leading-5  focus:outline-none  transition duration-150 ease-in-out">
-            {reference.title}
-            </a>
-           </p>
-          {/each}
-        </div>
+				<div>
+					{#each tech.externalReferences as reference}
+						<p class="leading-relaxed mb-3">
+							<a
+								href={reference.link}
+								class="ml-4 block font-medium leading-5  focus:outline-none  transition duration-150 ease-in-out"
+							>
+								{reference.title}
+							</a>
+						</p>
+					{/each}
+				</div>
 			</div>
-      			<div class="pb-4 md:mr-8 xl:pb-0 xl:mb-8 xl:col-span-3 mt-4 xl:mt-10">
+			<div class="pb-4 md:mr-8 xl:pb-0 xl:mb-8 xl:col-span-3 mt-4 xl:mt-10">
 				<h3 class="text-xl xl:text-2xl font-bold mb-4 text-mix-600 leading-snug xl:leading-snug">
 					Useful Articles
 				</h3>
-        <div>
-          {#each tech.externalArticles as article}
-          			<p class="leading-relaxed mb-3">
-
-          <a href={article.link} class="ml-4 block font-medium leading-5  focus:outline-none  transition duration-150 ease-in-out">
-            {article.title}
-            </a>
-           </p>
-          {/each}
-        </div>
+				<div>
+					{#each tech.externalArticles as article}
+						<p class="leading-relaxed mb-3">
+							<a
+								href={article.link}
+								class="ml-4 block font-medium leading-5  focus:outline-none  transition duration-150 ease-in-out"
+							>
+								{article.title}
+							</a>
+						</p>
+					{/each}
+				</div>
 			</div>
 		</div>
 	</article>

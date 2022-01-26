@@ -32,7 +32,11 @@ export const sectionsQuery = `'sections': *[_type == "section"] | order(weight a
      slug,
      description
     }`
-export const techQuery = `'technologies': *[_type == "technology"]{..., "icon": icon.asset->}`
+export const techQuery = `'technologies': *[_type == "technology"]{
+  ...,
+  "icon": icon.asset->,
+  "relatedPosts": *[_type=='post' && references(^._id)]{ _type, slug, title }
+}`
 /**
  * You can also re-use parts of projections as fragments.
  * In this case, we're defining that, to render an author card, we need their name, slug & image.
