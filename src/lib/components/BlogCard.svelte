@@ -34,7 +34,7 @@
 			{#each post.tags || [] as tag}
 				<span
 					class="tag"
-					>#{tag.title}</span
+					><a href="/tag/{tag.slug.current}">#{tag.title}</a></span
 				>
 			{/each}
 			<div class="flex items-center flex-wrap ">
