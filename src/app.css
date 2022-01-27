@@ -24,7 +24,7 @@ main {
     @apply md:ml-auto flex flex-wrap text-base;
 }
 .navItem {
-    @apply mr-8 font-mono text-light-200 hover:underline hover:text-light-400;
+    @apply mr-6 font-mono text-light-200 hover:underline hover:text-light-400;
 }
 /* -- end nav bar */
 

@@ -32,7 +32,7 @@
 	<header class="navHeader">
 		<div class="navContainer">
 			<a sveltekit:prefetch href="/" class="navTitle">
-				<span class="ml-3 text-xl ">{global.headerTitle}</span>
+				<span class="md:ml-3 text-xl ">{global.headerTitle}</span>
 			</a>
 			<nav class="navBar">
 				{#each sections as section}
