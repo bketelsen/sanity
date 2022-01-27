@@ -25,6 +25,7 @@
 
 	export let postsByMonth;
 	export let page;
+	export let global;
 </script>
 
 <SEO {page} {global} />
