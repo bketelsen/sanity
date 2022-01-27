@@ -2,7 +2,6 @@
 	export let post;
 	import { DateTime } from 'luxon';
 	import Icon from './Icon.svelte';
-
 </script>
 
 <aside class="pb-10">
@@ -31,34 +30,29 @@
 				<dt class="label">Categories</dt>
 				<dd class="text-mix-500 font-medium leading-6">
 					{#each post.categories || [] as cat}
-					<span
-						class="category"
-						>{cat.title}</span
-					>
-				{/each}
+						<span class="category"><a href="/category/{cat.slug.current}">{cat.title}</a></span>
+					{/each}
 				</dd>
 			</dl>
 
 			<dl class="w-full mt-4 md:mr-8 md:w-auto xl:mt-0 xl:mr-0">
 				<dt class="label">Technologies</dt>
 				<dd class="text-mix-500 font-medium leading-6">
-					{#each post.technologies|| [] as tech}
-					<span
-						class="technology"
-						>{tech.title}</span
-					>
-				{/each}
+					{#each post.technologies || [] as tech}
+						<span class="technology">
+							<a href="/technology/{tech.slug.current}">
+								{tech.title}
+							</a>
+						</span>
+					{/each}
 				</dd>
 			</dl>
 			<dl class="w-full mt-4 md:mr-8 md:w-auto xl:mt-0 xl:mr-0">
 				<dt class="label">Tags</dt>
 				<dd class="text-mix-500 font-medium leading-6">
 					{#each post.tags || [] as tag}
-					<span
-						class="tag"
-						>#{tag.title}</span
-					>
-				{/each}
+						<span class="tag">#{tag.title}</span>
+					{/each}
 				</dd>
 			</dl>
 		</div>
