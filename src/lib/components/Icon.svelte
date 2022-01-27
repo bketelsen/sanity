@@ -42,5 +42,6 @@
 			icon = Cog;
 	}
 </script>
-
+<button aria-label={title}>
 <Icon src={icon} {size} {color} {className} {title} />
+</button>

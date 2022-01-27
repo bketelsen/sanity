@@ -32,6 +32,11 @@ main {
 .bodyContainer {
     @apply flex flex-col h-screen justify-between bg-light-100;
 }
-
+.sectionWrapper {
+    @apply text-mix-700  bg-light-100;
+}
+.sectionContainer {
+    @apply container px-5 py-5 lg:py-24 mx-auto;
+}
 @tailwind components;
 @tailwind utilities;
