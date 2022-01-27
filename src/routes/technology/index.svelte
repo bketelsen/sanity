@@ -4,7 +4,7 @@
 		try {
 			const res = await fetch('/technology/all.json');
 			const { page, technologies } = await res.json();
-			const {global} = stuff;
+			const { global } = stuff;
 
 			return {
 				props: { global, technologies, page }
@@ -25,6 +25,7 @@
 
 	export let technologies;
 	export let page;
+	export let global;
 </script>
 
 <SEO {page} {global} />
