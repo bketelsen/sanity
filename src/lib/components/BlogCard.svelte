@@ -18,7 +18,7 @@
 			{#each post.categories || [] as cat}
 				<span
 					class="category"
-					>{cat.title}</span
+					><a href="/category/{cat.slug.current}">{cat.title}</a></span
 				>
 			{/each}
 			{#each post.technologies || [] as tech}

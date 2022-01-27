@@ -1,7 +1,7 @@
 <script context="module">
 	export const prerender = true;
 
-	export async function load({ params, fetch , global}) {
+	export async function load({ params, fetch , stuff}) {
 		try {
 			const url = `/category/${params.slug}.json`;
 			const res = await fetch(url);
@@ -9,7 +9,7 @@
 			const {cat} = data;
 			const {global} = stuff;
 
-			if (data?.cat) {
+			if (cat) {
 				return {
 					props: {global, cat}
 				};
