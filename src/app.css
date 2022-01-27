@@ -38,5 +38,19 @@ main {
 .sectionContainer {
     @apply container px-5 py-5 lg:py-24 mx-auto;
 }
+.card {
+    @apply h-full rounded-lg cursor-pointer bg-light-100 border border-light-300 hover:shadow-xl hover:shadow-mix-500/70 overflow-hidden;
+}
+.category {
+    @apply tracking-widest text-sm font-mono font-bold text-green-700 bg-green-100 mb-1 mr-3 uppercase;
+}
+
+.technology {
+    @apply tracking-widest text-sm font-mono font-bold text-cerise-600 bg-cerise-100 mb-1 mr-3 uppercase;
+}
+
+.tag{
+    @apply tracking-widest text-sm font-mono font-bold text-orange-600 bg-orange-100 mb-1 mr-3 uppercase;
+}
 @tailwind components;
 @tailwind utilities;

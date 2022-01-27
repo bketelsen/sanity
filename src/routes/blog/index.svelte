@@ -33,7 +33,7 @@
 <PageWrapper>
 	<PageTitle {...page} />
 	{#each postsByMonth as month}
-		<h1 class="sm:text-3xl text-2xl font-medium title-font mt-8 mb-4 text-mix-600">
+		<h1 class="sm:text-3xl text-2xl font-medium font-mono mt-8 mb-4 text-mix-600">
 			{dateFormat(new Date(month.date), 'MMMM yyyy')}
 		</h1>
 		<CardGroup>

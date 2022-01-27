@@ -7,7 +7,7 @@
     <h2 class="text-xs text-mix-500 tracking-widest font-medium title-font mb-1 uppercase">
         {subtitle}
     </h2>
-    <h1 class="sm:text-3xl text-2xl font-medium font-mono mb-4 text-mix-600">
+    <h1 class="sm:text-3xl text-2xl font-bold font-mono mb-4 text-mix-600">
         {title}
     </h1>
     <p class="lg:w-1/3 mx-auto leading-relaxed text-xl">

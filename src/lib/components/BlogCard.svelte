@@ -7,7 +7,7 @@
 					<a
 					sveltekit:prefetch
 					href={`/blog/${post.slug}`}>
-	<div class="h-full rounded-lg cursor-pointer bg-light-100 border border-light-300 hover:shadow-xl hover:shadow-mix-500/70 overflow-hidden">
+	<div class="card">
 		<SanityImage
 			image={post.image.asset}
 			maxWidth={402}
@@ -17,23 +17,23 @@
 		<div class="p-6">
 			{#each post.categories || [] as cat}
 				<span
-					class="tracking-widest text-xs title-font font-medium text-green-700 mb-1 mr-3 uppercase"
+					class="category"
 					>{cat.title}</span
 				>
 			{/each}
 			{#each post.technologies || [] as tech}
 				<span
-					class="tracking-widest text-xs title-font font-medium text-cerise-600 mb-1 mr-3 uppercase"
+					class="technology"
 					><a href="/technology/{tech.slug.current}">{tech.title}</a></span
 				>
 			{/each}
-			<h1 class="title-font text-lg font-medium text-mix-600 mb-3">{post.title}</h1>
+			<h1 class="font-mono text-xl mt-2 font-bold text-mix-600 mb-3">{post.title}</h1>
 			<p class="leading-relaxed mb-3">
 				{post.excerpt ? post.excerpt : ''}
 			</p>
 			{#each post.tags || [] as tag}
 				<span
-					class="tracking-widest text-xs title-font font-medium text-indigo-700 mb-3 mr-3 uppercase"
+					class="tag"
 					>#{tag.title}</span
 				>
 			{/each}
