@@ -37,6 +37,12 @@ export const techQuery = `'technologies': *[_type == "technology"]{
   "icon": icon.asset->,
   "relatedPosts": *[_type=='post' && references(^._id)]{ _type, slug, title }
 }`
+
+export const tagQuery = `'tags': *[_type == "tag"]{
+  ...,
+  "icon": icon.asset->,
+  "relatedPosts": *[_type=='post' && references(^._id)]{ _type, slug, title }
+}`
 export const categoryQuery = `'categories': *[_type == "category"]{
   ...,
   "icon": icon.asset->,

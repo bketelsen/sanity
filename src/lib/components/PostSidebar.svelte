@@ -51,7 +51,8 @@
 				<dt class="label">Tags</dt>
 				<dd class="text-mix-500 font-medium leading-6">
 					{#each post.tags || [] as tag}
-						<span class="tag">#{tag.title}</span>
+						<span class="tag">
+							<a href="/tag/{tag.slug.current}">#{tag.title}</a></span>
 					{/each}
 				</dd>
 			</dl>

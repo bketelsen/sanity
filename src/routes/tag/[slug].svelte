@@ -3,11 +3,11 @@
 
 	export async function load({ params, fetch }) {
 		try {
-			const url = `/technology/${params.slug}.json`;
+			const url = `/tag/${params.slug}.json`;
 			const res = await fetch(url);
 			const data = await res.json();
 
-			if (data?.tech) {
+			if (data?.tag) {
 				return {
 					props: data
 				};
@@ -25,8 +25,8 @@
 	import SEO from '$lib/components/SEO.svelte';
 	import { globalStore } from '$lib/stores/global';
 
-	export let tech;
-	console.log(tech);
+	export let tag;
+
 </script>
 
 <SEO global={$globalStore} />
@@ -34,15 +34,15 @@
 <main class="container max-w-3xl mx-auto xl:max-w-5xl px-4 xl:px-0">
 	<article class="relative flex flex-col md:px-4 xl:grid xl:grid-cols-4 xl:col-gap-6">
 		<div class="pb-4 md:mr-8 xl:pb-0 xl:mb-8 xl:col-span-3 mt-4 xl:mt-10">
-			<h2 class="text-3xl xl:text-4xl font-bold mb-4 text-cerise-600 leading-snug xl:leading-snug">
-				{tech.title}
+			<h2 class="text-3xl xl:text-4xl font-bold mb-4 text-orange-600 leading-snug xl:leading-snug">
+				{tag.title}
 			</h2>
 		</div>
 		<div
 			class="order-1 space-y-16 md:mr-8 xl:order-none xl:col-span-3 prose text-mix-700 lg:prose-lg "
 		>
 			<p class="leading-relaxed mb-3">
-				{tech.description}
+				{tag.description}
 			</p>
 
 			<hr class="border-mix-700 " />
@@ -51,7 +51,7 @@
 					Posts
 				</h3>
 				<div>
-					{#each tech.relatedPosts as post}
+					{#each tag.relatedPosts as post}
 						<p class="leading-relaxed mb-3">
 							<a
 								href="/blog/{post.slug.current}"
@@ -68,7 +68,7 @@
 					External Reference Links
 				</h3>
 				<div>
-					{#each tech.externalReferences as reference}
+					{#each tag.externalReferences as reference}
 						<p class="leading-relaxed mb-3">
 							<a
 								href={reference.link}
@@ -85,7 +85,7 @@
 					My Bookmarks
 				</h3>
 				<div>
-					{#each tech.externalArticles as article}
+					{#each tag.externalArticles as article}
 						<p class="leading-relaxed mb-3">
 							<a
 								href={article.link}
