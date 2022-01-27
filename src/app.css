@@ -52,5 +52,8 @@ main {
 .tag{
     @apply tracking-widest text-sm font-mono font-bold text-orange-600 bg-orange-100 mb-1 mr-3 uppercase;
 }
+.label {
+    @apply font-semibold text-mix-600;
+}
 @tailwind components;
 @tailwind utilities;
