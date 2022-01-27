@@ -12,10 +12,10 @@ main {
 
 /* nav bar */
 .navHeader {
-    @apply text-light-200 bg-mix-600;
+    @apply mx-2 md:mx-5 rounded rounded-xl text-light-200 bg-mix-600;
 }
 .navContainer {
-    @apply container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center;
+    @apply container  mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center;
 }
 .navTitle {
     @apply flex font-medium items-center text-light-200 hover:text-white mb-4 md:mb-0;
@@ -24,7 +24,7 @@ main {
     @apply md:ml-auto flex flex-wrap text-base;
 }
 .navItem {
-    @apply mr-5 text-light-200 hover:text-white;
+    @apply mr-8 text-light-200 hover:underline hover:text-light-400;
 }
 /* -- end nav bar */
 
