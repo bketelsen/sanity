@@ -1,11 +1,13 @@
 <script context="module">
 	export const prerender=true;
-	export async function load({ fetch }) {
+	export async function load({ fetch, stuff }) {
 		try {
 			const res = await fetch('/index.json');
 			const data = await res.json();
+			const {page} = data;
+			const {global,sections} = stuff;
 			return {
-				props: data
+				props: {global,sections,page}
 			};
 		} catch (err) {
 			console.log('500:', err);
@@ -18,16 +20,16 @@
 	import PageWrapper from '$lib/components/PageWrapper.svelte';
 	import Sections from '$lib/components/Sections.svelte';
 	import SEO from '$lib/components/SEO.svelte';
-	import { globalStore } from '$lib/stores/global';
-	import { sectionStore } from '$lib/stores/sections';
 
 
 	export let page;
+	export let sections;
+	export let global;
 
 </script>
 
-<SEO page={page} global={$globalStore} />
+<SEO {page} {global} />
 <PageWrapper >
 		<PageTitle {...page} />
-		<Sections sections={$sectionStore} />
+		<Sections {sections}/>
 </PageWrapper>

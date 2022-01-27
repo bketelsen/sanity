@@ -1,12 +1,13 @@
 <script context="module">
 	export const prerender = true;
-	export async function load({ fetch }) {
+	export async function load({ fetch, stuff }) {
 		try {
 			const res = await fetch('/category/all.json');
 			const { page, categories } = await res.json();
+			const {global} = stuff;
 
 			return {
-				props: { categories, page }
+				props: { global, categories, page }
 			};
 		} catch (err) {
 			console.log('500:', err);
@@ -21,14 +22,13 @@
 	import CardGroup from '$lib/components/CardGroup.svelte';
 
 	import SEO from '$lib/components/SEO.svelte';
-	import { globalStore } from '$lib/stores/global';
 
 	export let categories;
+	export let global;
 	export let page;
-	console.log(categories);
 </script>
 
-<SEO {page} global={$globalStore} />
+<SEO {page} {global} />
 
 <PageWrapper>
 	<PageTitle {...page} />

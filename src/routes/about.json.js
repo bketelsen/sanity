@@ -1,4 +1,4 @@
-import { pageQuery,globalQuery } from '$lib/queries'
+import { pageQuery} from '$lib/queries'
 import {client} from '$lib/sanityClient'
 
 // Fetch all valid posts & authors to display in the homepage

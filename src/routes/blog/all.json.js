@@ -1,4 +1,4 @@
-import { getPostsQuery,pageQuery,globalQuery} from '$lib/queries'
+import { getPostsQuery,pageQuery} from '$lib/queries'
 import { client } from '$lib/sanityClient'
 import formatISO9075 from 'date-fns/formatISO9075/index.js';
 import isSameMonth from 'date-fns/isSameMonth/index.js';

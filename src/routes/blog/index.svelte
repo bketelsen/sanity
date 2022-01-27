@@ -1,12 +1,12 @@
 <script context="module">
-	export const prerender = true;
-	export async function load({ fetch }) {
+	export async function load({ fetch, stuff }) {
 		try {
 			const res = await fetch('/blog/all.json');
 			const { page, postsByMonth } = await res.json();
+			const {global} = stuff;
 
 			return {
-				props: { postsByMonth, page }
+				props: { global, postsByMonth, page }
 			};
 		} catch (err) {
 			console.log('500:', err);
@@ -22,13 +22,12 @@
 	import BlogCard from '$lib/components/BlogCard.svelte';
 	import dateFormat from 'date-fns/format/index.js';
 	import SEO from '$lib/components/SEO.svelte';
-	import { globalStore } from '$lib/stores/global';
 
 	export let postsByMonth;
 	export let page;
 </script>
 
-<SEO {page} global={$globalStore} />
+<SEO {page} {global} />
 
 <PageWrapper>
 	<PageTitle {...page} />

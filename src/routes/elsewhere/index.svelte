@@ -1,10 +1,12 @@
 <script context="module">
-	export async function load({ fetch }) {
+	export async function load({ fetch, stuff }) {
 		try {
 			const res = await fetch('/elsewhere/elsewhere.json');
 			const data = await res.json();
+			const {page} = data;
+			const {global} = stuff;
 			return {
-				props: data
+				props: {global, page}
 			};
 		} catch (err) {
 			console.log('500:', err);
@@ -16,13 +18,12 @@
 	import PageTitle from '$lib/components/PageTitle.svelte';
 	import PageWrapper from '$lib/components/PageWrapper.svelte';
 	import SEO from '$lib/components/SEO.svelte';
-				import { globalStore } from '$lib/stores/global';
 
 
-
+	export let global;
 	export let page;
 </script>
-<SEO page={page} global={$globalStore} />
+<SEO page={page} {global} />
 <PageWrapper>
 	<PageTitle {...page} />
 		<div class="flex flex-wrap -m-4">

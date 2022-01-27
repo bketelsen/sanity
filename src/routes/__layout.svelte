@@ -4,8 +4,14 @@
 		try {
 			const res = await fetch('/global.json');
 			const data = await res.json();
+			const {global,sections} = data;
+
 			return {
-				props: data
+				props: {global, sections},
+				stuff: {
+					global,
+					sections
+				}
 			};
 		} catch (err) {
 			console.log('500:', err);
@@ -19,11 +25,7 @@
 	import '../app.css';
 
 	import Footer from '$lib/components/Footer.svelte';
-	import { globalStore } from '$lib/stores/global';
-	import { sectionStore } from '$lib/stores/sections';
 
-	$globalStore = global;
-	$sectionStore = sections;
 </script>
 
 <div class="bodyContainer">

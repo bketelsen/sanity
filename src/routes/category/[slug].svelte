@@ -1,15 +1,17 @@
 <script context="module">
 	export const prerender = true;
 
-	export async function load({ params, fetch }) {
+	export async function load({ params, fetch , global}) {
 		try {
 			const url = `/category/${params.slug}.json`;
 			const res = await fetch(url);
 			const data = await res.json();
+			const {cat} = data;
+			const {global} = stuff;
 
 			if (data?.cat) {
 				return {
-					props: data
+					props: {global, cat}
 				};
 			}
 		} catch (err) {
@@ -23,13 +25,12 @@
 
 <script>
 	import SEO from '$lib/components/SEO.svelte';
-	import { globalStore } from '$lib/stores/global';
 
 	export let cat;
-	console.log(cat);
+	export let global;
 </script>
 
-<SEO global={$globalStore} />
+<SEO {global} />
 
 <main class="container max-w-3xl mx-auto xl:max-w-5xl px-4 xl:px-0">
 	<article class="relative flex flex-col md:px-4 xl:grid xl:grid-cols-4 xl:col-gap-6">
