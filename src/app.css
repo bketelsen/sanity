@@ -3,5 +3,35 @@
 /* Write your global styles here, in PostCSS syntax */
 /* fixed width only on sm and up */
 
+body {
+    @apply bg-light-100;
+}
+main {
+    @apply mb-auto bg-light-100;
+}
+
+/* nav bar */
+.navHeader {
+    @apply text-light-200 bg-mix-600;
+}
+.navContainer {
+    @apply container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center;
+}
+.navTitle {
+    @apply flex font-medium items-center text-light-200 hover:text-white mb-4 md:mb-0;
+}
+.navBar {
+    @apply md:ml-auto flex flex-wrap text-base;
+}
+.navItem {
+    @apply mr-5 text-light-200 hover:text-white;
+}
+/* -- end nav bar */
+
+/* body */
+.bodyContainer {
+    @apply flex flex-col h-screen justify-between bg-light-100;
+}
+
 @tailwind components;
 @tailwind utilities;
