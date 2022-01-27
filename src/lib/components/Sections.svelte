@@ -5,7 +5,7 @@
 <div class="flex flex-wrap">
 	{#each sections as section}
 		<div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-mix-700">
-			<h2 class="text-lg sm:text-xl text-mix-500 font-medium title-font mb-2">
+			<h2 class="text-lg font-mono sm:text-xl text-mix-500 font-bold title-font mb-2">
 				{section.title}
 			</h2>
 			<p class="leading-relaxed text-base mb-4">

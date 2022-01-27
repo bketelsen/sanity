@@ -18,13 +18,13 @@ main {
     @apply container  mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center;
 }
 .navTitle {
-    @apply flex font-medium items-center text-light-200 hover:text-white mb-4 md:mb-0;
+    @apply flex font-medium items-center font-mono text-light-200 hover:text-white mb-4 md:mb-0;
 }
 .navBar {
     @apply md:ml-auto flex flex-wrap text-base;
 }
 .navItem {
-    @apply mr-8 text-light-200 hover:underline hover:text-light-400;
+    @apply mr-8 font-mono text-light-200 hover:underline hover:text-light-400;
 }
 /* -- end nav bar */
 
