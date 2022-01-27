@@ -47,7 +47,7 @@
 			</h1>
 			<SanityFigure image={post.image} maxWidth={800} alt={post.image.alt}/>
 		</div>
-		<div class="order-1 md:mr-8 xl:order-none xl:col-span-3 prose text-mix-800 lg:prose-lg">
+		<div class="order-1 md:mr-8 xl:order-none xl:col-span-3 prose text-mix-800 lg:prose-lg mb-10">
 			<PortableText
 				blocks={post.body}
 				serializers={{
