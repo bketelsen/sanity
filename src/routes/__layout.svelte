@@ -33,7 +33,7 @@
 	</div>
 	<NavLink link="/">Home</NavLink>
 	{#each sections as section}
-		<NavLink link={section.slug.current}>{section.title}</NavLink>
+		<NavLink link="/{section.slug.current}">{section.title}</NavLink>
 	{/each}
 </Nav>
 
