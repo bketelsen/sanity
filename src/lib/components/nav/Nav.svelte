@@ -36,7 +36,7 @@
 	<div
 		class={'links flex sm:flex-row sm:w-auto sm:h-auto sm:static sm:top-auto sm:left-auto sm:p-0 w-full h-screen absolute flex-col top-20 left-0 p-5 transition-all duration-200 ' +
 			(isBurgerOpen
-				? 'visible bg-white ease-in-out translate-y-0 opacity-100'
+				? 'visible bg-light-200 ease-in-out translate-y-0 opacity-100'
 				: 'sm:visible invisible sm:opacity-100 opacity-0 sm:translate-y-0 -translate-y-4')}
 	>
 		<slot />
