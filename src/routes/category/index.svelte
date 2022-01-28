@@ -4,7 +4,7 @@
 		try {
 			const res = await fetch('/category/all.json');
 			const { page, categories } = await res.json();
-			const {global} = stuff;
+			const { global } = stuff;
 
 			return {
 				props: { global, categories, page }

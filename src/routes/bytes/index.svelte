@@ -3,10 +3,10 @@
 		try {
 			const res = await fetch('/bytes/bytes.json');
 			const data = await res.json();
-			const {page} = data;
-			const {global} = stuff;
+			const { page } = data;
+			const { global } = stuff;
 			return {
-				props: {global, page}
+				props: { global, page }
 			};
 		} catch (err) {
 			console.log('500:', err);
@@ -22,6 +22,7 @@
 	export let global;
 	export let page;
 </script>
+
 <SEO {page} {global} />
 <PageWrapper>
 	<PageTitle {...page} />

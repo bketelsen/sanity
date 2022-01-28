@@ -1,17 +1,17 @@
 <script context="module">
 	export const prerender = true;
 
-	export async function load({ params, fetch, stuff}) {
+	export async function load({ params, fetch, stuff }) {
 		try {
 			const url = `/tag/${params.slug}.json`;
 			const res = await fetch(url);
 			const data = await res.json();
-			const {tag} = data;
-			const {global} = stuff;
+			const { tag } = data;
+			const { global } = stuff;
 
 			if (data?.tag) {
 				return {
-					props: {global, tag}
+					props: { global, tag }
 				};
 			}
 		} catch (err) {
@@ -28,7 +28,6 @@
 
 	export let tag;
 	export let global;
-
 </script>
 
 <SEO {global} />

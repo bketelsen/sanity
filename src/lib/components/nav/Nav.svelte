@@ -9,7 +9,7 @@
 </script>
 
 <nav
-	class="z-50 opacity-100 flex flex-row justify-between px-8 py-3 sticky top-0 bg-light-200 shadow-xl"
+	class="z-50 opacity-100 flex flex-row justify-between px-8 py-3 sticky top-0 bg-light-00 shadow-xl"
 >
 	<slot name="logo" />
 

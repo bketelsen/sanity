@@ -35,8 +35,7 @@ main {
 
 }
 
-.tag{
-            @apply text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-orange-100 text-orange-600 uppercase rounded-full
+.tag{        @apply text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-orange-100 text-orange-600 uppercase rounded-full
 }
 .label {
     @apply font-semibold text-mix-600;

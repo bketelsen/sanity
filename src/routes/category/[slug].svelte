@@ -1,17 +1,17 @@
 <script context="module">
 	export const prerender = true;
 
-	export async function load({ params, fetch , stuff}) {
+	export async function load({ params, fetch, stuff }) {
 		try {
 			const url = `/category/${params.slug}.json`;
 			const res = await fetch(url);
 			const data = await res.json();
-			const {cat} = data;
-			const {global} = stuff;
+			const { cat } = data;
+			const { global } = stuff;
 
 			if (cat) {
 				return {
-					props: {global, cat}
+					props: { global, cat }
 				};
 			}
 		} catch (err) {
@@ -36,7 +36,7 @@
 	<article class="relative flex flex-col md:px-4 xl:grid xl:grid-cols-4 xl:col-gap-6">
 		<div class="pb-4 md:mr-8 xl:pb-0 xl:mb-8 xl:col-span-3 mt-4 xl:mt-10">
 			<h2 class="text-3xl xl:text-4xl font-bold mb-4 leading-snug xl:leading-snug">
-			Reference >	Category > <span class="text-cerise-600">{cat.title}</span>
+				Reference > Category > <span class="text-cerise-600">{cat.title}</span>
 			</h2>
 		</div>
 		<div

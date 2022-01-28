@@ -3,7 +3,7 @@
 		try {
 			const res = await fetch('/blog/all.json');
 			const { page, postsByMonth } = await res.json();
-			const {global} = stuff;
+			const { global } = stuff;
 
 			return {
 				props: { global, postsByMonth, page }
