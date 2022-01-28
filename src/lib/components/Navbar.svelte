@@ -20,7 +20,9 @@
 			</svg>
 			<span class="ml-3 text-xl">{global.siteName}</span>
 		</a>
-		<nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+		<nav
+			class="md:ml-auto flex flex-wrap items-center text-lg font-bold text-azure-600 justify-center"
+		>
 			{#each sections as section}
 				<a href="/{section.slug.current}" class="mr-5 hover:text-gray-900">{section.title}</a>
 			{/each}
