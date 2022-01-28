@@ -1,46 +1,62 @@
 <script>
-  import { DateTime } from 'luxon';
+	import { DateTime } from 'luxon';
 
 	export let posts;
-
 </script>
 
-<section class="mt-20 text-gray-900">
-	<div class="grid grid-cols-1">
-		<h2 class="text-3xl font-mono font-black mb-2 pb-1">Recent posts</h2>
-		<p class="text-xl opacity-80 mb-0">
-			Ab placeat inventore labore, illo vel quas modi officiis consectetur reiciendis. Pariatur
-			consectetur omnis cumque dolorem debitis.
-		</p>
-	</div>
-
-	<hr class="my-12" />
-
-	<div class="grid lg:grid-cols-3 gap-4">
-		{#each posts as post}
-			<div class="mb-12">
-				<div>
-					<div class="pb-4">
-						<p class="pb-1 mb-4">
+<section class="text-gray-600 body-font">
+	<div class="container px-5 py-16 mx-auto">
+		<h2 class="sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-20">
+			Recent Posts
+		</h2>
+		<div class="flex flex-wrap -m-4">
+			{#each posts as post}
+				<div class="p-4 lg:w-1/3">
+					<div
+						class="h-full bg-azure-100 hover:shadow-2xl bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative"
+					>
+						<h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
 							{#each post.categories || [] as cat}
 								<span class="category"><a href="/category/{cat.slug.current}">{cat.title}</a></span>
 							{/each}
-						</p>
-						<h5 class="text-xl font-semibold mb-4"><a href="/blog/{post.slug}">{post.title}</a></h5>
-						<p class="text-gray-700 mb-4">
+						</h2>
+						<h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">
+							{post.title}
+						</h1>
+						<p class="leading-relaxed mb-3">
 							{post.excerpt}
 						</p>
-					</div>
-					<div class="flex flex-row items-center">
-						<div >
-							<p class="text-xs opacity-80">					<time dateTime={post.date}
-						>{DateTime.fromISO(post.date).toLocaleString(DateTime.DATE_FULL)}</time
-					> • {post.estimatedReadingTime} min read</p>
+						<a href="/blog/{post.slug}" class="text-blue-700 inline-flex items-center"
+							>Read Post
+							<svg
+								class="w-4 h-4 ml-2"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+								stroke-width="2"
+								fill="none"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<path d="M5 12h14" />
+								<path d="M12 5l7 7-7 7" />
+							</svg>
+						</a>
+						<div
+							class="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4"
+						>
+							<span
+								class="text-gray-700 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200"
+								><time dateTime={post.date}
+									>{DateTime.fromISO(post.date).toLocaleString(DateTime.DATE_FULL)}</time
+								></span
+							>
+							<span class="text-gray-700 inline-flex items-center leading-none text-sm">
+								{post.estimatedReadingTime} min read
+							</span>
 						</div>
 					</div>
 				</div>
-			</div>
-		{/each}
-
+			{/each}
+		</div>
 	</div>
 </section>

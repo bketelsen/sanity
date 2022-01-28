@@ -23,21 +23,12 @@
 	export let sections;
 	import '../app.css';
 	import Footer from '$lib/components/Footer.svelte';
-	import Nav from '$lib/components/nav/Nav.svelte';
-	import NavLink from '$lib/components/nav/NavLink.svelte';
+	import Navbar from '$lib/components/Navbar.svelte';
 </script>
 
-<Nav>
-	<div slot="logo">
-		<a href="/" class="px-3 py-2 font-bold font-mono  text-2xl">{global.siteName} </a>
-	</div>
-	<NavLink link="/">Home</NavLink>
-	{#each sections as section}
-		<NavLink link="/{section.slug.current}">{section.title}</NavLink>
-	{/each}
-</Nav>
+<Navbar {sections} {global} />
 
-<div class="bodyContainer">
+<div class="z-0 bodyContainer">
 	<main>
 		<slot />
 	</main>
