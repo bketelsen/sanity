@@ -14,7 +14,7 @@ main {
 
 /* body */
 .bodyContainer {
-    @apply flex flex-col h-screen justify-between bg-light-0;
+    @apply flex flex-col pt-10 h-screen justify-between bg-light-0;
 }
 .sectionWrapper {
     @apply text-mix-700  bg-light-0;
@@ -31,11 +31,12 @@ main {
 }
 
 .technology {
-    @apply tracking-widest text-sm font-mono font-bold text-cerise-600 bg-cerise-100 mb-1 mr-3 uppercase;
+    @apply text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-cerise-100 text-cerise-600 uppercase rounded-full
+
 }
 
 .tag{
-    @apply tracking-widest text-sm font-mono font-bold text-orange-600 bg-orange-100 mb-1 mr-3 uppercase;
+            @apply text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-orange-100 text-orange-600 uppercase rounded-full
 }
 .label {
     @apply font-semibold text-mix-600;

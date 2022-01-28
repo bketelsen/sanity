@@ -249,8 +249,8 @@ const config = {
 
 
   plugins: [
-    require('@tailwindcss/typography'),
-    require('tw-elements/dist/plugin')
+    require('@tailwindcss/typography')
+
 
   ],
 };
