@@ -28,7 +28,7 @@
 
 <Navbar {sections} {global} />
 
-<div class="z-0 bodyContainer">
+<div class="bodyContainer">
 	<main>
 		<slot />
 	</main>
