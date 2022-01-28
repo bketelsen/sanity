@@ -35,8 +35,8 @@
 <main class="container max-w-3xl mx-auto xl:max-w-5xl px-4 xl:px-0">
 	<article class="relative flex flex-col md:px-4 xl:grid xl:grid-cols-4 xl:col-gap-6">
 		<div class="pb-4 md:mr-8 xl:pb-0 xl:mb-8 xl:col-span-3 mt-4 xl:mt-10">
-			<h2 class="text-3xl xl:text-4xl font-bold mb-4 text-cerise-600 leading-snug xl:leading-snug">
-				{cat.title}
+			<h2 class="text-3xl xl:text-4xl font-bold mb-4 leading-snug xl:leading-snug">
+			Reference >	Category > <span class="text-cerise-600">{cat.title}</span>
 			</h2>
 		</div>
 		<div

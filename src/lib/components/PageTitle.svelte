@@ -1,16 +1,17 @@
 <script>
-    export let subtitle;
-    export let title;
-    export let herotext;
+	export let subtitle;
+	export let title;
+	export let herotext;
 </script>
-<div class="flex flex-col text-center w-full mb-5 lg:mb-20">
-    <h2 class="text-xs text-mix-500 tracking-widest font-medium title-font mb-1 uppercase">
-        {subtitle}
-    </h2>
-    <h1 class="sm:text-3xl text-2xl font-bold font-mono mb-4 text-mix-600">
-        {title}
-    </h1>
-    <p class="lg:w-1/3 mx-auto leading-relaxed text-xl">
-        {herotext}
-    </p>
-</div>
+
+  <section class="mb-15">
+    <div class="container mx-auto py-5 px-3">
+      <div class="grid grid-cols-1 gap-4">
+        <div class="text-center text-gray-900">
+          <h5 class="text-xl font-bold uppercase text-azure-600 mb-6">{subtitle}</h5>
+          <h2 class="text-3xl font-mono font-black mb-10">{title}</h2>
+          <p class="text-xl opacity-80 mb-12 md:mx-12 lg:mx-24 xl:mx-96">{herotext}</p>
+        </div>
+      </div>
+    </div>
+  </section>

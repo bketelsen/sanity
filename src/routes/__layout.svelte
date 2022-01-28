@@ -1,13 +1,12 @@
 <script context="module">
 	export async function load({ fetch }) {
-
 		try {
 			const res = await fetch('/global.json');
 			const data = await res.json();
-			const {global,sections} = data;
+			const { global, sections } = data;
 
 			return {
-				props: {global, sections},
+				props: { global, sections },
 				stuff: {
 					global,
 					sections
@@ -24,26 +23,12 @@
 	export let sections;
 	import '../app.css';
 
+	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-
 </script>
 
 <div class="bodyContainer">
-	<header class="navHeader">
-		<div class="navContainer">
-			<a sveltekit:prefetch href="/" class="navTitle">
-				<span class="md:ml-3 text-xl ">{global.headerTitle}</span>
-			</a>
-			<nav class="navBar">
-				{#each sections as section}
-				<a sveltekit:prefetch href='/{section.slug.current}' class="navItem">{section.title}</a>
-				{/each}
-
-			</nav>
-
-
-		</div>
-	</header>
+	<Navbar {global} {sections} />
 	<main>
 		<slot />
 	</main>

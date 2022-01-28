@@ -4,45 +4,30 @@
 /* fixed width only on sm and up */
 
 body {
-    @apply bg-light-100;
+    @apply bg-light-0;
 }
 main {
-    @apply mb-auto bg-light-100;
+    @apply mb-auto bg-light-0;
 }
 
-/* nav bar */
-.navHeader {
-    @apply mx-2 md:mx-5 rounded rounded-xl text-light-200 bg-mix-600;
-}
-.navContainer {
-    @apply container  mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center;
-}
-.navTitle {
-    @apply flex font-medium items-center font-mono text-light-200 hover:text-white mb-4 md:mb-0;
-}
-.navBar {
-    @apply md:ml-auto flex flex-wrap text-base;
-}
-.navItem {
-    @apply mr-6 font-mono text-light-200 hover:underline hover:text-light-400;
-}
-/* -- end nav bar */
+
 
 /* body */
 .bodyContainer {
-    @apply flex flex-col h-screen justify-between bg-light-100;
+    @apply flex flex-col h-screen justify-between bg-light-0;
 }
 .sectionWrapper {
-    @apply text-mix-700  bg-light-100;
+    @apply text-mix-700  bg-light-0;
 }
 .sectionContainer {
-    @apply container px-5 py-5 lg:py-24 mx-auto;
+    @apply container px-5 py-5 lg:py-10 mx-auto;
 }
 .card {
-    @apply h-full rounded-lg cursor-pointer bg-light-100 border border-light-300 hover:shadow-xl hover:shadow-mix-500/70 overflow-hidden;
+    @apply h-full rounded-lg cursor-pointer bg-light-0 border border-light-300 hover:shadow-xl hover:shadow-mix-500/70 overflow-hidden;
 }
 .category {
-    @apply tracking-widest text-sm font-mono font-bold text-green-700 bg-green-100 mb-1 mr-3 uppercase;
+    @apply text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-green-200 text-green-600 uppercase rounded-full
+
 }
 
 .technology {

@@ -1,10 +1,12 @@
-import { pageQuery } from '$lib/queries'
+import { getPostsQuery,pageQuery} from '$lib/queries'
 import {client} from '$lib/sanityClient'
 
 // Fetch all valid posts & authors to display in the homepage
 export async function get() {
   const data = await client.fetch(/* groq */ `{
-    ${pageQuery}
+    ${pageQuery},
+    "posts": ${getPostsQuery(3)}
+
   }`,
     { slug: "home" }
 )

@@ -5,7 +5,7 @@
 
 <div class="p-4 md:w-1/3">
 	<div
-		class="h-full rounded-lg cursor-pointer bg-light-100 border border-light-300 hover:shadow-xl hover:shadow-mix-500/70 overflow-hidden"
+		class="h-full rounded-lg cursor-pointer bg-light-0 border border-light-300 hover:shadow-xl hover:shadow-mix-500/70 overflow-hidden"
 	>
 		<Icon
 			kind={tag.iconName}

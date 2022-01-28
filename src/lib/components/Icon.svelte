@@ -7,6 +7,7 @@
 	import Twitch	from 'svelte-icons-pack/fa/FaBrandsTwitch';
 	import Github from 'svelte-icons-pack/fa/FaBrandsGithub';
 	import Youtube from 'svelte-icons-pack/fa/FaBrandsYoutube';
+	import Book from 'svelte-icons-pack/fa/FaSolidBook';
 	import Cog from 'svelte-icons-pack/fa/FaSolidCog';
 
 	export let kind;
@@ -37,6 +38,9 @@
 			break;
 		case 'youtube':
 			icon = Youtube;
+			break;
+		case 'book':
+			icon = Book;
 			break;
 		default:
 			icon = Cog;

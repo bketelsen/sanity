@@ -1,7 +1,7 @@
 const colors = require('tailwindcss/colors');
 
 const config = {
-  content: ['./src/**/*.{html,js,svelte,ts}'],
+  content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/tw-elements/dist/js/**/*.js'],
 
   theme: {
     extend: {
@@ -248,7 +248,11 @@ const config = {
   },
 
 
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('tw-elements/dist/plugin')
+
+  ],
 };
 
 module.exports = config;
