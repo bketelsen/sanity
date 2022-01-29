@@ -26,7 +26,7 @@
 				{#each post.tags || [] as tag}
 					<span class="tag"><a href="/tag/{tag.slug.current}">#{tag.title}</a></span>
 				{/each}
-				<div class="flex items-center flex-wrap ">
+				<div class="mt-2 flex items-center flex-wrap ">
 					<a
 						sveltekit:prefetch
 						href={`/blog/${post.slug}`}
