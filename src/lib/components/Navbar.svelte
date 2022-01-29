@@ -5,7 +5,7 @@
 
 <header class="text-gray-600 body-font">
 	<div
-		class="container mx-auto bg-light-200 rounded-lg shadow shadow-xl flex flex-wrap p-5 flex-col md:flex-row items-center"
+		class="container mx-auto bg-gradient-to-t from-light-200 to-azure-300 rounded-lg shadow shadow-xl flex flex-wrap p-5 flex-col md:flex-row items-center"
 	>
 		<a href="/" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
 			<svg
@@ -23,10 +23,10 @@
 			<span class="ml-3 text-xl">{global.siteName}</span>
 		</a>
 		<nav
-			class="md:ml-auto flex flex-wrap items-center text-lg font-bold text-azure-600 justify-center"
+			class="md:ml-auto flex flex-wrap items-center text-lg font-bold text-gray-900 justify-center"
 		>
 			{#each sections as section}
-				<a href="/{section.slug.current}" class="mr-5 hover:text-gray-900">{section.title}</a>
+				<a sveltekit:prefetch href="/{section.slug.current}" class="mr-5 hover:text-azure-600">{section.title}</a>
 			{/each}
 		</nav>
 	</div>

@@ -5,7 +5,7 @@
 </script>
 
 <section class="text-gray-600 body-font">
-	<div class="container px-5 py-16 mx-auto">
+	<div class="container mt-10 px-5 py-16 mx-auto rounded-xl bg-gradient-to-b from-azure-300 via-azure-500 ">
 		<h2 class="sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-20">
 			Recent Posts
 		</h2>
@@ -13,7 +13,7 @@
 			{#each posts as post}
 				<div class="p-4 lg:w-1/3">
 					<div
-						class="h-full bg-azure-100 hover:shadow-2xl bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative"
+						class="h-full bg-azure-100  shadow-xl hover:shadow-2xl bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative"
 					>
 						<h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
 							{#each post.categories || [] as cat}
