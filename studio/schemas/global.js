@@ -16,6 +16,11 @@ export default {
       description: "Header Title, for top nav"
     },
     {
+      name: 'announcement',
+      title: 'Announcement',
+      type: 'banner'
+    },
+    {
       title: 'Site URL',
       name: 'siteUrl',
       type: 'url'

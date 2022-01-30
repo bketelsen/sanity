@@ -18,6 +18,7 @@ import seo from './seo'
 import author from './author'
 import section from './section'
 import mainImage from './mainImage'
+import banner from './banner'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -41,6 +42,7 @@ export default createSchema({
     // { type: 'typename' } in other document schemas
     blockContent,
     mainImage,
-    externalReference
+    externalReference,
+    banner
   ])
 })
