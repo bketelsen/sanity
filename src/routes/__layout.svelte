@@ -25,7 +25,7 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Announcement from '$lib/components/Announcement.svelte';
-	console.log(global)
+
 </script>
 
 <Navbar {sections} {global} />
