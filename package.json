@@ -2,7 +2,7 @@
   "name": "sanity",
   "version": "0.0.1",
   "scripts": {
-    "dev": "svelte-kit dev --host",
+    "dev": "svelte-kit dev",
     "build": "svelte-kit build",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
@@ -17,6 +17,7 @@
     "@sveltejs/adapter-vercel": "1.0.0-next.39",
     "@sveltejs/kit": "1.0.0-next.245",
     "autoprefixer": "^10.4.0",
+    "dotenv": "^14.3.2",
     "prettier": "^2.4.1",
     "prettier-plugin-svelte": "^2.4.0",
     "svelte": "^3.44.0",
@@ -26,6 +27,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/typography": "^0.5.0",
     "cssnano": "^5.0.14",
     "daisyui": "^1.20.0",
