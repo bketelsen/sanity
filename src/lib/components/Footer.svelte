@@ -27,7 +27,7 @@
         </form>
         <p class="mt-3 text-sm text-indigo-200">
           I care about the protection of your data. Read my
-          <a href="/privacy" class="text-white font-medium underline">
+          <a href="/" class="text-white font-medium underline">
             Privacy Policy.
           </a>
         </p>
