@@ -6,6 +6,7 @@
     "build": "svelte-kit build",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
+    "tailwind-config-viewer": "tailwind-config-viewer -o -c tailwind.config.cjs",
     "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. .",
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
   },
@@ -23,6 +24,7 @@
     "svelte": "^3.44.0",
     "svelte-icons-pack": "^1.4.6",
     "svelte-preprocess": "^4.10.1",
+    "tailwind-config-viewer": "^1.6.3",
     "tailwindcss": "^3.0.7"
   },
   "type": "module",
@@ -30,7 +32,7 @@
     "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/typography": "^0.5.0",
     "cssnano": "^5.0.14",
-    "daisyui": "^1.20.0",
+    "daisyui": "^1.25.4",
     "date-fns": "^2.28.0",
     "luxon": "^2.3.0",
     "postcss": ">=8.2.15 <9.0.0",

@@ -3,16 +3,16 @@
 	export let global;
 </script>
 
-<footer class="text-gray-800 body-font rounded-lg body-font">
+<footer class="t body-font rounded-lg body-font">
 
-<div class="bg-light-0">
-  <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
+<div class="bg-primary">
+  <div class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:py-5 lg:px-10">
     <div class="px-6 py-6 bg-mix-500 rounded-lg md:py-12 md:px-12 lg:py-16 lg:px-16 xl:flex xl:items-center">
       <div class="xl:w-0 xl:flex-1">
-        <h2 class="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
+        <h2 class="text-2xl font-extrabold tracking-tight sm:text-3xl">
           Want updates in your Inbox?
         </h2>
-        <p class="mt-3 max-w-3xl text-lg leading-6 text-indigo-200">
+        <p class="mt-3 max-w-3xl text-lg leading-6 ">
           Sign up for my newsletter to stay up to date.
         </p>
       </div>
@@ -21,13 +21,13 @@
           <label for="email-address" class="sr-only">Email address</label>
           <input id="email-address" name="email" type="email" autocomplete="email" required class="w-full border-white px-5 py-3 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-mix-700 focus:ring-white rounded-md" placeholder="Enter your email">
 		  <input id="e30ec" hidden name="l" checked value="e30ec06b-3376-4792-8100-33d6feb07b99" />
-          <button type="submit" class="mt-3 w-full flex items-center justify-center px-5 py-3 border border-transparent shadow text-base font-medium rounded-md text-white bg-mix-700 hover:bg-mix-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0">
+          <button type="submit" class="ml-2 btn btn-secondary">
             Subscribe
           </button>
         </form>
-        <p class="mt-3 text-sm text-indigo-200">
+        <p class="mt-3 text-sm ">
           I care about the protection of your data. Read my
-          <a href="/" class="text-white font-medium underline">
+          <a href="/" class=" font-medium underline">
             Privacy Policy.
           </a>
         </p>

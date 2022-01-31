@@ -3,27 +3,29 @@
 /* Write your global styles here, in PostCSS syntax */
 /* fixed width only on sm and up */
 
+
+
 body {
-    @apply bg-light-0;
+    @apply bg-base-100;
 }
 main {
-    @apply mb-auto bg-light-0;
+    @apply mb-auto bg-base-100;
 }
 
 
 
 /* body */
 .bodyContainer {
-    @apply flex flex-col mt-10 h-screen justify-between bg-light-0;
+    @apply flex flex-col mt-10 h-screen justify-between bg-base-100;
 }
 .sectionWrapper {
-    @apply text-mix-700  bg-light-0;
+    @apply text-base-content  bg-base-100;
 }
 .sectionContainer {
     @apply container px-5 py-5 lg:py-10 mx-auto;
 }
 .card {
-    @apply h-full rounded-lg cursor-pointer bg-light-0 border border-light-100 hover:shadow-xl hover:shadow-mix-500/70 overflow-hidden;
+    @apply h-full rounded-lg cursor-pointer bg-base-100 border border-base-200 hover:shadow-xl hover:shadow-neutral/70 overflow-hidden;
 }
 .category {
     @apply text-xs flex-none py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-green-200 text-green-600 uppercase rounded-full
@@ -31,7 +33,7 @@ main {
 }
 
 .technology {
-    @apply flex-none text-xs  py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-cerise-100 text-cerise-600 uppercase rounded-full
+    @apply flex-none text-xs  py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-red-100 text-red-600 uppercase rounded-full
 
 }
 
@@ -39,7 +41,7 @@ main {
     @apply flex-none text-xs py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-orange-100 text-orange-600 uppercase rounded-full
 }
 .label {
-    @apply font-semibold text-mix-600;
+    @apply font-semibold text-base-content;
 }
 @tailwind components;
 @tailwind utilities;
