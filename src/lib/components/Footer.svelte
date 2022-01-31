@@ -19,9 +19,9 @@
       <div class="mt-8 sm:w-full sm:max-w-md xl:mt-0 xl:ml-8">
         <form class="sm:flex" method="post" action="https://list.brian.dev/subscription/form">
           <label for="email-address" class="sr-only">Email address</label>
-          <input id="email-address" name="email" type="email" autocomplete="email" required class="w-full border-white px-5 py-3 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-mix-700 focus:ring-white rounded-md" placeholder="Enter your email">
+          <input id="email-address" name="email" type="email" autocomplete="email" required class="w-full border-white px-5 py-3 mr-2 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-mix-700 focus:ring-white rounded-md" placeholder="Enter your email">
 		  <input id="e30ec" hidden name="l" checked value="e30ec06b-3376-4792-8100-33d6feb07b99" />
-          <button type="submit" class="ml-2 btn btn-secondary">
+          <button type="submit" class="btn btn-secondary">
             Subscribe
           </button>
         </form>
