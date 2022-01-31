@@ -26,16 +26,17 @@ main {
     @apply h-full rounded-lg cursor-pointer bg-light-0 border border-light-100 hover:shadow-xl hover:shadow-mix-500/70 overflow-hidden;
 }
 .category {
-    @apply text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-green-200 text-green-600 uppercase rounded-full
+    @apply text-xs flex-none py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-green-200 text-green-600 uppercase rounded-full
 
 }
 
 .technology {
-    @apply text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-cerise-100 text-cerise-600 uppercase rounded-full
+    @apply flex-none text-xs  py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-cerise-100 text-cerise-600 uppercase rounded-full
 
 }
 
-.tag{        @apply text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-orange-100 text-orange-600 uppercase rounded-full
+.tag{
+    @apply flex-none text-xs py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-orange-100 text-orange-600 uppercase rounded-full
 }
 .label {
     @apply font-semibold text-mix-600;
