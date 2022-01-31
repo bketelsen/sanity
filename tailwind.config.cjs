@@ -19,7 +19,7 @@ const config = {
   ],
   daisyui: {
     themes: [
-      'cmyk'
+      'dracula'
     ],
 
   },
