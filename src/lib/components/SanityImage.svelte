@@ -12,6 +12,6 @@
     src={urlFor(image).width(maxWidth).fit('crop').crop('focalpoint').auto('format')}
     alt={alt || image.alt || ''}
     class={classes}
-    style="aspect-ratio: {image.metadata.dimensions.aspectRatio};"
+
   />
 {/if}

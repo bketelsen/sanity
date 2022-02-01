@@ -45,7 +45,7 @@
 			<h1 class="text-3xl xl:text-4xl font-bold  mb-4 text-mix-600 leading-snug xl:leading-snug">
 				{post.title}
 			</h1>
-			<SanityFigure image={post.image} maxWidth={800} alt={post.image.alt} />
+			<SanityFigure image={post.image} maxWidth={800} alt={post.image.alt} classes="rounded-lg"/>
 		</div>
 		<div class="order-1 md:mr-8 xl:order-none xl:col-span-3 prose text-mix-800 lg:prose-lg mb-10">
 			<PortableText
@@ -53,7 +53,7 @@
 				serializers={{
 					types: {
 						code: Code,
-						image: ImageBlock,
+						mainImage: ImageBlock,
 						authorReference: AuthorBlock
 					},
 					marks: {
