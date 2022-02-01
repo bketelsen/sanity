@@ -5,12 +5,12 @@
 
 <div class="p-4 md:w-1/3">
 	<a sveltekit:prefetch href={`/blog/${post.slug}`}>
-		<div class="card">
+		<div class="card shadow-xl image-full">
 			<SanityImage
 				image={post.image.asset}
 				maxWidth={402}
 				alt={post.title}
-				classes="w-full object-contain object-center"
+				classes=""
 			/>
 			<div class="p-6">
 				{#each post.categories || [] as cat}

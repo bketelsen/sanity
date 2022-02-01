@@ -4,7 +4,7 @@
 </script>
 
 <footer class="text-secondary-content body-font rounded-lg body-font">
-	<div class="bg-secondary">
+	<div class="bg-primary">
 		<div class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:py-5 lg:px-10">
 			<div
 				class="px-6 py-6 bg-mix-500 rounded-lg md:py-12 md:px-12 lg:py-16 lg:px-16 xl:flex xl:items-center"
@@ -36,7 +36,7 @@
 							checked
 							value="e30ec06b-3376-4792-8100-33d6feb07b99"
 						/>
-						<button type="submit" class="btn btn-primary"> Subscribe </button>
+						<button type="submit" class="btn btn-secondary"> Subscribe </button>
 					</form>
 					<p class="mt-3 text-sm ">
 						I care about the protection of your data. Read my
