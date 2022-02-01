@@ -3,7 +3,6 @@
 	import SanityImage from './SanityImage.svelte';
 </script>
 
-<li>
 	<a sveltekit:prefetch href={`/blog/${post.slug}`}>
 		<div class="card image-full shadow-lg shadow-primary/25 hover:shadow-primary/75 ">
 			<figure class="">
@@ -30,4 +29,3 @@
 			</div>
 		</div>
 	</a>
-</li>
