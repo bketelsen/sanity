@@ -13,7 +13,7 @@
   <figure>
     <SanityImage image={image.asset} {maxWidth} {classes}/>
     {#if image.caption}
-      <figcaption class="text-center text-mix-600 pt-2 italic">{image.caption}</figcaption>
+      <figcaption class="text-center pt-2 italic">{image.caption}</figcaption>
     {/if}
   </figure>
 {/if}
