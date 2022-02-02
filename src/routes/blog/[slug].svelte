@@ -58,7 +58,7 @@
 		<div class="grid grid-cols-1 justify-center">
 			<div class="prose prose-lg lg:prose-xl xl:w-8/12 lg:w-10/12 mx-auto">
 				<img
-					src={urlFor(post.image).width(1200).fit('fillmax')}
+					src={urlFor(post.image).width(800).fit('fillmax')}
 					alt={post.image.alt || post.title || ''}
 					{height}
 					{width}

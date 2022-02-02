@@ -5,7 +5,7 @@
 
   export let image
   export let classes = "w-full rounded-lg"
-  export let maxWidth = 1200
+  export let maxWidth = 800
   export let alt = undefined
 
 
