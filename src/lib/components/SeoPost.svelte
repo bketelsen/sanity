@@ -47,7 +47,7 @@ openGraph={{
     },
     headline: post.title,
     image: [
- "https://og-sooty.vercel.app/api/open-graph-image?path=/brian.dev/blog/" +
+ "https://og-sooty.vercel.app/api/open-graph-image?path=/brian.dev/blog/" + post.slug.current
     ],
     datePublished: '2020-08-03T17:31:37Z',
     dateModified: '2020-08-20T09:31:37Z',
