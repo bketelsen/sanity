@@ -11,7 +11,7 @@
 
 {#if image.asset}
   <figure>
-    <SanityImage image={image.asset} {maxWidth} {classes}/>
+    <SanityImage image={image} {maxWidth} {classes}/>
     {#if image.caption}
       <figcaption class="text-center pt-2 italic">{image.caption}</figcaption>
     {/if}

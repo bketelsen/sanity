@@ -29,39 +29,39 @@
 	import Link from '$lib/components/Link.svelte';
 	import ImageBlock from '$lib/components/ImageBlock.svelte';
 	import AuthorBlock from '$lib/components/AuthorBlock.svelte';
-	import SanityFigure from '$lib/components/SanityFigure.svelte';
-	import PostSidebar from '$lib/components/PostSidebar.svelte';
+	import SanityImage from '$lib/components/SanityImage.svelte';
 	import SEO from '$lib/components/SEO.svelte';
+	import PageTitle from '$lib/components/PageTitle.svelte';
+	import PageWrapper from '$lib/components/PageWrapper.svelte';
+	import { DateTime } from 'luxon';
 
 	export let post;
 	export let global;
 </script>
 
 <SEO {post} {global} />
+<PageWrapper>
+	<PageTitle subtitle="article" title={post.title} herotext={DateTime.fromISO(post.publishedAt).toLocaleString(DateTime.DATE_FULL)} />
+	<!-- Section: Design Block -->
+	<section class="mb-20 ">
+		<div class="grid grid-cols-1 justify-center">
+			<div class="prose prose-lg lg:prose-xl xl:w-8/12 lg:w-10/12 mx-auto">
+            <SanityImage image={post.image} maxWidth={1200} alt={post.image.alt} classes="w-full rounded-lg"/>
 
-<main class="container max-w-3xl mx-auto xl:max-w-5xl px-4 xl:px-0">
-	<article class="relative flex flex-col md:px-4 xl:grid xl:grid-cols-4 xl:col-gap-6">
-		<div class="pb-4 md:mr-8 xl:pb-0 xl:mb-8 xl:col-span-3 mt-4 xl:mt-10">
-			<h1 class="text-3xl xl:text-4xl font-bold  mb-4 text-mix-600 leading-snug xl:leading-snug">
-				{post.title}
-			</h1>
-			<SanityFigure image={post.image} maxWidth={800} alt={post.image.alt} classes="rounded-lg"/>
+				<PortableText
+					blocks={post.body}
+					serializers={{
+						types: {
+							code: Code,
+							image: ImageBlock,
+							authorReference: AuthorBlock
+						},
+						marks: {
+							link: Link
+						}
+					}}
+				/>
+			</div>
 		</div>
-		<div class="order-1 md:mr-8 xl:order-none xl:col-span-3 prose text-mix-800 lg:prose-lg mb-10">
-			<PortableText
-				blocks={post.body}
-				serializers={{
-					types: {
-						code: Code,
-						mainImage: ImageBlock,
-						authorReference: AuthorBlock
-					},
-					marks: {
-						link: Link
-					}
-				}}
-			/>
-		</div>
-		<PostSidebar {post} />
-	</article>
-</main>
+	</section>
+</PageWrapper>

@@ -2,14 +2,12 @@
   import SanityImage from './SanityImage.svelte'
 
   export let portableText
-  $: ({block} = portableText);
-
-
+  $: ({block} = portableText)
 </script>
 
-{#if block.image}
+{#if block.asset}
   <figure>
-    <SanityImage image={block.image} alt={block.alt} classes="rounded-xl"/>
+    <SanityImage image={block} />
     {#if block.caption}
       <figcaption>{block.caption}</figcaption>
     {/if}

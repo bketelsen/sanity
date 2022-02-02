@@ -7,14 +7,13 @@ export function getPostsQuery(limit, extraFilter) {
     _type == "post" &&
     defined(slug.current) &&
     publishedAt < now()
-    ${extraFilter ? `&& ${extraFilter}` : ''}
-  ] ${limit ? `[0...${limit}]`: ''}| order(publishedAt desc) {
+  ] | order(publishedAt desc) {
     _id,
     title,
     'date': publishedAt,
     excerpt,
     'slug': slug.current,
-    'image': {"caption": image.caption, "alt": image.alt, "asset": image.image.asset->},
+    image,
     'author': author->{name, twitter, image},
     "numberOfCharacters": length(pt::text(body)),
     "estimatedWordCount": round(length(pt::text(body)) / 5),

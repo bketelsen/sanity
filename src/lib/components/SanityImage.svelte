@@ -1,17 +1,56 @@
 <script>
   import {urlFor} from '$lib/sanityClient'
+  import {onMount} from 'svelte'
+  import {browser} from '$app/env'
 
   export let image
+  export let classes = "w-full rounded-lg"
   export let maxWidth = 1200
   export let alt = undefined
-  export let classes
- </script>
 
-{#if image}
+
+
+  // Example image document ID: image-cc93b69600f5cd1abce97fd0d4aa71793dbbba76-1350x900-png
+  // Structure: image-${storedImgId}-${dimensions}-${format}
+
+  // If we split it by "-", the 3rd element are the dimensions (1350x900)
+  $: dimensions = image?.asset?._ref?.split('-')[2]
+  // If we split dimensions by "x", we get the width (1350) and height (900)
+  $: [width, height] = dimensions.split('x').map(Number)
+
+  $: aspectRatio = width / height
+
+  let imageRef
+  // Once loaded, the image will transition to full opacity
+  let loaded = false
+
+  onMount(() => {
+    imageRef.onload = () => {
+      loaded = true
+    }
+  })
+</script>
+
+{#if browser && image}
   <img
-    src={urlFor(image).width(maxWidth).fit('crop').crop('focalpoint').auto('format')}
+ loading="lazy"
+    src={urlFor(image).width(maxWidth).fit('fillmax')}
     alt={alt || image.alt || ''}
-    class={classes}
-
+    height={height}
+    width={width}
+    class:loaded
+    class={' ' +classes}
+    bind:this={imageRef}
+    style="aspect-ratio: {aspectRatio};"
   />
 {/if}
+
+<style>
+  img {
+    opacity: 0;
+    transition: opacity 1200ms ease-out;
+  }
+  img.loaded {
+    opacity: 1;
+  }
+</style>

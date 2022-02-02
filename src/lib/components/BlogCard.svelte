@@ -6,7 +6,7 @@
 <a sveltekit:prefetch href={`/blog/${post.slug}`}>
 	<div class="card text-center shadow-2xl">
 		<figure class="px-10 pt-10">
-			<SanityImage image={post.image.asset} maxWidth={402} alt={post.title} classes="rounded-xl" />
+			<SanityImage image={post.image} maxWidth={402} alt={post.title} classes="rounded-xl" />
 		</figure>
 		<div class="card-body">
 			<h2 class="card-title">{post.title}</h2>

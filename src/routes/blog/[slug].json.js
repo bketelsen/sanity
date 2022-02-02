@@ -5,10 +5,10 @@ import {client} from '$lib/sanityClient'
 export async function get({params: {slug}}) {
   const post = await client.fetch(/* groq */ `*[_type == "post" && slug.current == "${slug}"][0]{
     ...,
-		"authors": authors[].author->{
+		"author": author->{
 			${AUTHOR_CARD_FRAGMENT}
 		},
-    'image': {"caption": image.caption, "alt": image.alt, "asset": image.image.asset->},
+
     'categories': categories[]->{title,slug,icon},
     'tags': tags[]->{title,slug,icon},
     'technologies': technologies[]->{title,slug,iconName},
