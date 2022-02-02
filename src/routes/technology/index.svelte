@@ -21,7 +21,8 @@
 	import TechCard from '$lib/components/TechCard.svelte';
 	import CardGroup from '$lib/components/CardGroup.svelte';
 
-	import SEO from '$lib/components/SEO.svelte';
+			import SEO from '$lib/components/SeoPage.svelte';
+
 
 	export let technologies;
 	export let page;
