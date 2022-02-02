@@ -11,8 +11,8 @@
 
 <SvelteSeo
 openGraph={{
-    title: post.title,
-    description: post.excerpt,
+    title: post.seo?.metaTitle || post.title,
+    description: post.seo?.metaDescription || post.excerpt,
     type: "article",
     url: global.siteUrl + "/blog/" + post.slug.current,
     article: {
@@ -37,8 +37,8 @@ openGraph={{
   }}
     twitter={{
     site: "@bketelsen",
-    title: post.title,
-    description: post.excerpt,
+    title: post.seo?.metaTitle || post.title,
+    description: post.seo?.metaDescription || post.excerpt,
     image: "https://og-sooty.vercel.app/api/open-graph-image?path=/brian.dev/blog/" + post.slug.current,
     imageAlt: post.title
   }}
@@ -48,7 +48,7 @@ openGraph={{
       '@type': 'WebPage',
       '@id': global.siteUrl + "/blog/" + post.slug.current,
     },
-    headline: post.title,
+    headline: post.seo?.metaTitle || post.title,
     image: [
  "https://og-sooty.vercel.app/api/open-graph-image?path=/brian.dev/blog/" + post.slug.current
     ],

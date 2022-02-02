@@ -2,6 +2,8 @@
     export let page;
     export let global;
     import SvelteSeo from "svelte-seo";
+        let slug = page.slug.current === "home" ? "/" : page.slug.current;
+
 
 </script>
 
@@ -9,7 +11,7 @@
   openGraph={{
     title: page.title,
     description: page.description,
-    url: global.siteUrl + "/" + page.slug.current,
+    url: global.siteUrl + "/" + slug,
     type: 'website',
     images: [
       {
