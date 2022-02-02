@@ -34,20 +34,37 @@
 	import PageTitle from '$lib/components/PageTitle.svelte';
 	import PageWrapper from '$lib/components/PageWrapper.svelte';
 	import { DateTime } from 'luxon';
+	import { urlFor } from '$lib/sanityClient';
 
 	export let post;
 	export let global;
+	// If we split it by "-", the 3rd element are the dimensions (1350x900)
+	$: dimensions = post?.image?.asset?._ref?.split('-')[2];
+	// If we split dimensions by "x", we get the width (1350) and height (900)
+	$: [width, height] = dimensions.split('x').map(Number);
+
+	$: aspectRatio = width / height;
 </script>
 
 <SEO {post} {global} />
 <PageWrapper>
-	<PageTitle subtitle="article" title={post.title} herotext={DateTime.fromISO(post.publishedAt).toLocaleString(DateTime.DATE_FULL)} />
+	<PageTitle
+		subtitle="article"
+		title={post.title}
+		herotext={DateTime.fromISO(post.publishedAt).toLocaleString(DateTime.DATE_FULL)}
+	/>
 	<!-- Section: Design Block -->
 	<section class="mb-20 ">
 		<div class="grid grid-cols-1 justify-center">
 			<div class="prose prose-lg lg:prose-xl xl:w-8/12 lg:w-10/12 mx-auto">
-            <SanityImage image={post.image} maxWidth={1200} alt={post.image.alt} classes="w-full rounded-lg"/>
-
+				<img
+					src={urlFor(post.image).width(1200).fit('fillmax')}
+					alt={post.image.alt || post.title || ''}
+					{height}
+					{width}
+					class="w-full rounded-lg"
+					style="aspect-ratio: {aspectRatio};"
+				/>
 				<PortableText
 					blocks={post.body}
 					serializers={{
