@@ -21,8 +21,8 @@ openGraph={{
       expirationTime: "2025-12-21T17:31:37Z",
       section: post.categories[0].title,
       authors: [
-        "https://www.example.com/authors/@firstnameA-lastnameA",
-        "https://www.example.com/authors/@firstnameB-lastnameB",
+        "Brian Ketelsen",
+
       ],
       tags: tags,
     },
@@ -46,14 +46,14 @@ openGraph={{
     '@type': 'Article',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': 'https://example.com/article'
+      '@id': global.siteName + "/blog/" + post.slug.current,
     },
     headline: post.title,
     image: [
  "https://og-sooty.vercel.app/api/open-graph-image?path=/brian.dev/blog/" + post.slug.current
     ],
-    datePublished: '2020-08-03T17:31:37Z',
-    dateModified: '2020-08-20T09:31:37Z',
+    datePublished: post.publishedAt,
+    dateModified: post.updatedAt,
     author: {
       '@type': 'Person',
       name: 'Brian Ketelsen',
