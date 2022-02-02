@@ -1,9 +1,7 @@
 <script>
     export let post;
     export let global;
-import Slug from "src/routes/blog/[slug].svelte";
     import SvelteSeo from "svelte-seo";
-    console.log(global)
 </script>
 
 <SvelteSeo
