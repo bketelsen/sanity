@@ -1,6 +1,5 @@
 <script>
 	export let byte;
-    console.log(byte)
 	import { DateTime } from 'luxon';
 
 </script>

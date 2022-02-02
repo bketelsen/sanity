@@ -23,7 +23,6 @@
 	export let global;
 	export let page;
 	export let bytes;
-	console.log(bytes);
 </script>
 
 <SEO {page} {global} />
