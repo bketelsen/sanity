@@ -2,7 +2,7 @@
     export let page;
     export let global;
     import SvelteSeo from "svelte-seo";
-    let slug = page.slug.current === "home" ? "/" : page.slug.current;
+    let slug = page.slug.current === "home" ? "" : page.slug.current;
 
 
 </script>
