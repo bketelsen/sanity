@@ -10,6 +10,7 @@ import category from './category'
 import tag from './tag'
 import technology from './technology'
 import post from './post'
+import byte from './byte'
 import page from './page'
 import externalReference from './externalReference'
 
@@ -29,6 +30,7 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
+    byte,
     post,
     page,
     author,

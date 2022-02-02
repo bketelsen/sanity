@@ -23,6 +23,21 @@ export function getPostsQuery(limit, extraFilter) {
     'technologies': technologies[]->{title,slug,iconName}
   }`
 }
+export function getBytesQuery(limit, extraFilter) {
+  return /* groq */ `*[
+    _type == "byte" &&
+    defined(slug.current) &&
+    publishedAt < now()
+  ] | order(publishedAt desc) {
+    _id,
+    title,
+    'date': publishedAt,
+    description,
+    'slug': slug.current,
+    href
+  }`
+}
+
 
 export const globalQuery = `'global': *[_type == 'global'][0]{...,author->{...}}`
 export const pageQuery = `'page': *[_type == 'page' && slug.current == $slug][0]{...}`
