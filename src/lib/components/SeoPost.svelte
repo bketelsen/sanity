@@ -16,8 +16,8 @@ openGraph={{
     type: "article",
     url: global.siteUrl + "/blog/" + post.slug.current,
     article: {
-      publishedTime: "2020-08-03T17:31:37Z",
-      modifiedTime: "2020-08-20T09:31:37Z",
+      publishedTime: post.publishedAt,
+      modifiedTime: post.updatedAt,
       expirationTime: "2025-12-21T17:31:37Z",
       section: post.categories[0].title,
       authors: [
