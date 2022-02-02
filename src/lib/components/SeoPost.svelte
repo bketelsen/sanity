@@ -2,6 +2,11 @@
     export let post;
     export let global;
     import SvelteSeo from "svelte-seo";
+    let tags = [];
+    post.tags.forEach(flattenTags)
+    function flattenTags(value, index, array)  {
+        tags.push(value.title);
+    };
 </script>
 
 <SvelteSeo
@@ -14,12 +19,12 @@ openGraph={{
       publishedTime: "2020-08-03T17:31:37Z",
       modifiedTime: "2020-08-20T09:31:37Z",
       expirationTime: "2025-12-21T17:31:37Z",
-      section: "Section II",
+      section: post.categories[0].title,
       authors: [
         "https://www.example.com/authors/@firstnameA-lastnameA",
         "https://www.example.com/authors/@firstnameB-lastnameB",
       ],
-      tags: ["Tag A", "Tag B", "Tag C"],
+      tags: tags,
     },
     images: [
       {
