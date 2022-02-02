@@ -46,7 +46,7 @@ openGraph={{
     '@type': 'Article',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': global.siteName + "/blog/" + post.slug.current,
+      '@id': global.siteUrl + "/blog/" + post.slug.current,
     },
     headline: post.title,
     image: [
