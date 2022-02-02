@@ -72,6 +72,11 @@ export default {
       type: 'seo',
     },
     {
+      name: 'excerpt',
+      title: 'Excerpt',
+      type: 'string',
+    },
+    {
       name: 'body',
       type: 'bodyPortableText',
       type: 'array',
