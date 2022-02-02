@@ -29,8 +29,7 @@
 	import Link from '$lib/components/Link.svelte';
 	import ImageBlock from '$lib/components/ImageBlock.svelte';
 	import AuthorBlock from '$lib/components/AuthorBlock.svelte';
-	import SanityImage from '$lib/components/SanityImage.svelte';
-	import SEO from '$lib/components/SEO.svelte';
+	import SEO from '$lib/components/SeoPost.svelte';
 	import PageTitle from '$lib/components/PageTitle.svelte';
 	import PageWrapper from '$lib/components/PageWrapper.svelte';
 	import { DateTime } from 'luxon';
