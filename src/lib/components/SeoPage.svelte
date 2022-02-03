@@ -1,6 +1,7 @@
 <script>
     export let page;
     export let global;
+    console.log(page)
     import SvelteSeo from "svelte-seo";
     let slug = page.slug.current === "home" ? "/" : page.slug.current;
 
@@ -8,6 +9,8 @@
 </script>
 
 <SvelteSeo
+    title= {page.seo?.metaTitle || page.title}
+    description= {page.seo?.metaDescription || page.description}
   openGraph={{
     title: page.seo?.metaTitle || page.title,
     description: page.seo?.metaDescription || page.herotext,
