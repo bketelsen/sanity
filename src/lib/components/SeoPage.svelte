@@ -4,12 +4,14 @@
     console.log(page)
     import SvelteSeo from "svelte-seo";
     let slug = page.slug.current === "home" ? "/" : page.slug.current;
+    let title = page.seo?.title || page.title;
+    title = title + " | " + global.siteName;
 
 
 </script>
 
 <SvelteSeo
-    title= {page.seo?.metaTitle || page.title}
+    title={title}
     description= {page.seo?.metaDescription || page.description}
   openGraph={{
     title: page.seo?.metaTitle || page.title,
