@@ -8,7 +8,7 @@ export async function get() {
     "posts": ${getPostsQuery(3)}
 
   }`,
-    { slug: "home" }
+    { slug: "/" }
 )
 
   if (data) {

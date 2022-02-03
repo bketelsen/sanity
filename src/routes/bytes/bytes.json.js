@@ -7,7 +7,7 @@ export async function get() {
 		"bytes": ${getBytesQuery()},
     ${pageQuery}
   }`,
-    { slug: "bytes" }
+    { slug: "/bytes/" }
 )
 
   if (data) {

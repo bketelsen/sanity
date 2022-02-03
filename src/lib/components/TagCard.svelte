@@ -14,16 +14,16 @@
 		/>
 
 		<div class="p-6">
-			<h1 class="title-font text-lg font-medium text-cerise-600 mb-3">{tag.title}</h1>
+			<h1 class="title-font text-lg font-medium text-cerise-600 mb-3">{tag.taxonomy.title}</h1>
 			<p class="leading-relaxed mb-3">
-				{tag.description}
+				{tag.taxonomy.description}
 			</p>
 
 			<div class="flex items-center flex-wrap ">
 				<a
 					sveltekit:prefetch
-					href={`/tag/${tag.slug.current}`}
-					class="text-mix-700 inline-flex items-center md:mb-2 lg:mb-0"
+					href={`${tag.scopedSlug.current}`}
+					class=" inline-flex items-center md:mb-2 lg:mb-0"
 					>Explore
 					<svg
 						class="w-4 h-4 ml-2"

@@ -10,7 +10,7 @@ export async function get() {
     ${pageQuery},
 		"posts": ${getPostsQuery()}
   }`,
-    { slug: "blog" })
+    { slug: "/blog/" })
 
   const { page, posts,global } = data;
   const postsByMonth = getPostsByMonth(posts)

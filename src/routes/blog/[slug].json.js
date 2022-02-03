@@ -3,7 +3,7 @@ import {client} from '$lib/sanityClient'
 
 // Gets a specific blog post from its slug.current value
 export async function get({params: {slug}}) {
-  const post = await client.fetch(/* groq */ `*[_type == "post" && slug.current == "${slug}"][0]{
+  const post = await client.fetch(/* groq */ `*[_type == "post" && scopedSlug.current == "/blog/${slug}/"][0]{
     ...,
 		"author": author->{
 			${AUTHOR_CARD_FRAGMENT}

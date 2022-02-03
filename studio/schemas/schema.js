@@ -5,21 +5,20 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
-import blockContent from './blockContent'
-import category from './category'
-import tag from './tag'
-import technology from './technology'
-import post from './post'
-import byte from './byte'
-import page from './page'
-import externalReference from './externalReference'
+import blockContent from './arrays/blockContent'
+import tag from './documents/tag'
+import post from './documents/post'
+import byte from './documents/byte'
+import page from './documents/page'
+import externalReference from './objects/externalReference'
+import taxonomy from './objects/taxonomy'
 
-import global from './global'
-import seo from './seo'
-import author from './author'
-import section from './section'
+import global from './documents/global'
+import seo from './objects/seo'
+import author from './documents/author'
+import section from './documents/section'
 import mainImage from './mainImage'
-import banner from './banner'
+import banner from './objects/banner'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -34,9 +33,7 @@ export default createSchema({
     post,
     page,
     author,
-    category,
     section,
-    technology,
     tag,
     seo,
     global,
@@ -45,6 +42,7 @@ export default createSchema({
     blockContent,
     mainImage,
     externalReference,
-    banner
+    banner,
+    taxonomy
   ])
 })

@@ -6,7 +6,7 @@ export async function get() {
   const data = await client.fetch(/* groq */ `{
      ${pageQuery}
   }`,
-    { slug: "about" }
+    { slug: "/about/" }
 )
 
   if (data) {

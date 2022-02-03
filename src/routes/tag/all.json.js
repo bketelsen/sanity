@@ -8,7 +8,7 @@ export async function get() {
     ${pageQuery},
 		${tagQuery}
   }`,
-    { slug: "tag" })
+    { slug: "/tag/" })
 
   const { page, tags } = data;
   if (data) {

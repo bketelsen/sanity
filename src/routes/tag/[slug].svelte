@@ -28,6 +28,7 @@
 
 	export let tag;
 	export let global;
+
 </script>
 
 <SEO {global} />
@@ -36,14 +37,14 @@
 	<article class="relative flex flex-col md:px-4 xl:grid xl:grid-cols-4 xl:col-gap-6">
 		<div class="pb-4 md:mr-8 xl:pb-0 xl:mb-8 xl:col-span-3 mt-4 xl:mt-10">
 			<h2 class="text-3xl xl:text-4xl font-bold mb-4 text-orange-600 leading-snug xl:leading-snug">
-				{tag.title}
+				{tag.taxonomy.title}
 			</h2>
 		</div>
 		<div
 			class="order-1 space-y-16 md:mr-8 xl:order-none xl:col-span-3 prose text-mix-700 lg:prose-lg "
 		>
 			<p class="leading-relaxed mb-3">
-				{tag.description}
+				{tag.taxonomy.description}
 			</p>
 
 			<hr class="border-mix-700 " />
@@ -52,16 +53,18 @@
 					Posts
 				</h3>
 				<div>
+					{#if tag.relatedPosts}
 					{#each tag.relatedPosts as post}
 						<p class="leading-relaxed mb-3">
 							<a
-								href="/blog/{post.slug.current}"
+								href="{post.scopedSlug.current}"
 								class="ml-4 block font-medium leading-5  focus:outline-none  transition duration-150 ease-in-out"
 							>
 								{post.title}
 							</a>
 						</p>
 					{/each}
+					{/if}
 				</div>
 			</div>
 			<div class="pb-4 md:mr-8 xl:pb-0 xl:mb-8 xl:col-span-3 mt-4 xl:mt-10">
@@ -69,7 +72,9 @@
 					External Reference Links
 				</h3>
 				<div>
-					{#each tag.externalReferences as reference}
+					{#if tag.taxonomy.externalReferences}
+
+					{#each tag.taxonomy.externalReferences as reference}
 						<p class="leading-relaxed mb-3">
 							<a
 								href={reference.link}
@@ -79,6 +84,7 @@
 							</a>
 						</p>
 					{/each}
+					{/if}
 				</div>
 			</div>
 			<div class="pb-4 md:mr-8 xl:pb-0 xl:mb-8 xl:col-span-3 mt-4 xl:mt-10">
@@ -86,7 +92,9 @@
 					My Bookmarks
 				</h3>
 				<div>
-					{#each tag.externalArticles as article}
+										{#if tag.taxonomy.externalArticles}
+
+					{#each tag.taxonomy.externalArticles as article}
 						<p class="leading-relaxed mb-3">
 							<a
 								href={article.link}
@@ -96,6 +104,7 @@
 							</a>
 						</p>
 					{/each}
+					{/if}
 				</div>
 			</div>
 		</div>

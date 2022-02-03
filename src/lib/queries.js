@@ -5,35 +5,33 @@
 export function getPostsQuery(limit, extraFilter) {
   return /* groq */ `*[
     _type == "post" &&
-    defined(slug.current) &&
+    defined(scopedSlug.current) &&
     publishedAt < now()
   ] | order(publishedAt desc) {
     _id,
     title,
     'date': publishedAt,
     excerpt,
-    'slug': slug.current,
+    'slug': scopedSlug.current,
     image,
     'author': author->{name, twitter, image},
     "numberOfCharacters": length(pt::text(body)),
     "estimatedWordCount": round(length(pt::text(body)) / 5),
     "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
-    'categories': categories[]->{title,slug,icon},
-    'tags': tags[]->{title,slug,icon},
-    'technologies': technologies[]->{title,slug,iconName}
+    'tags': tags[]->{taxonomy,scopedSlug}
   }`
 }
 export function getBytesQuery(limit, extraFilter) {
   return /* groq */ `*[
     _type == "byte" &&
-    defined(slug.current) &&
+    defined(scopedSlug.current) &&
     publishedAt < now()
   ] | order(publishedAt desc) {
     _id,
     title,
     'date': publishedAt,
     description,
-    'slug': slug.current,
+    'slug': scopedSlug.current,
     href
   }`
 }
@@ -46,22 +44,12 @@ export const sectionsQuery = `'sections': *[_type == "section"] | order(weight a
      slug,
      description
     }`
-export const techQuery = `'technologies': *[_type == "technology"]{
-  ...,
-  "icon": icon.asset->,
-  "relatedPosts": *[_type=='post' && references(^._id)]{ _type, slug, title }
-}`
 
 export const tagQuery = `'tags': *[_type == "tag"]{
   ...,
-  "icon": icon.asset->,
   "relatedPosts": *[_type=='post' && references(^._id)]{ _type, slug, title }
 }`
-export const categoryQuery = `'categories': *[_type == "category"]{
-  ...,
-  "icon": icon.asset->,
-  "relatedPosts": *[_type=='post' && references(^._id)]{ _type, slug, title }
-}`
+
 /**
  * You can also re-use parts of projections as fragments.
  * In this case, we're defining that, to render an author card, we need their name, slug & image.

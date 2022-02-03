@@ -1,4 +1,3 @@
-// mainImage.js
 export default {
     name: 'banner',
     title: 'Announcement',
