@@ -18,7 +18,7 @@
 		title: post.seo?.metaTitle || post.title,
 		description: post.seo?.metaDescription || post.excerpt,
 		type: 'article',
-		url: global.siteUrl + '/blog/' + post.scopedSlug.current,
+		url: global.siteUrl + post.scopedSlug.current,
 		article: {
 			publishedTime: post.publishedAt,
 			modifiedTime: post.updatedAt,
@@ -30,7 +30,7 @@
 		images: [
 			{
 				url:
-					'https://og-sooty.vercel.app/api/open-graph-image?path=/brian.dev/' +
+					'https://og-sooty.vercel.app/api/open-graph-image?path=/brian.dev' +
 					post.scopedSlug.current,
 				width: 1200,
 				height: 630,
@@ -43,7 +43,7 @@
 		title: post.seo?.metaTitle || post.title,
 		description: post.seo?.metaDescription || post.excerpt,
 		image:
-			'https://og-sooty.vercel.app/api/open-graph-image?path=/brian.dev/' + post.scopedSlug.current,
+			'https://og-sooty.vercel.app/api/open-graph-image?path=/brian.dev' + post.scopedSlug.current,
 		imageAlt: post.title
 	}}
 	jsonLd={{
@@ -54,7 +54,7 @@
 		},
 		headline: post.seo?.metaTitle || post.title,
 		image: [
-			'https://og-sooty.vercel.app/api/open-graph-image?path=/brian.dev/' + post.scopedSlug.current
+			'https://og-sooty.vercel.app/api/open-graph-image?path=/brian.dev' + post.scopedSlug.current
 		],
 		datePublished: post.publishedAt,
 		dateModified: post.updatedAt,
