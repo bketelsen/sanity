@@ -3,7 +3,6 @@
 	export let global;
 	import SvelteSeo from 'svelte-seo';
 	let slug = page.slug.current;
-	console.log("slug:", slug)
 	let title = page.seo?.title || page.title;
 	title = title + ' | ' + global.siteName;
 </script>
