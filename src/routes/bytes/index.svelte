@@ -18,7 +18,7 @@
 	import ByteGroup from '$lib/components/ByteGroup.svelte';
 	import PageTitle from '$lib/components/PageTitle.svelte';
 	import PageWrapper from '$lib/components/PageWrapper.svelte';
-	import SEO from '$lib/components/SEO.svelte';
+	import SEO from '$lib/components/SeoPage.svelte';
 
 	export let global;
 	export let page;
