@@ -41,7 +41,6 @@
     class:loaded
     class={' ' +classes}
     bind:this={imageRef}
-    style="aspect-ratio: {aspectRatio};"
   />
 {/if}
 
