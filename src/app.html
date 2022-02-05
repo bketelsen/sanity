@@ -4,16 +4,22 @@
 <head>
 	<meta charset="utf-8" />
 	<link rel="icon" href="/favicon.png" />
-	<link rel="alternate" type="application/rss+xml"
-  title="RSS Feed for brian.dev"
-  href="/rss.xml" />
+	<link rel="alternate" type="application/rss+xml" title="RSS Feed for brian.dev" href="/rss.xml" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	%svelte.head%
 </head>
 
 <body class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 	<div id="svelte">%svelte.body%</div>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y15RYE6XQH"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
 
+		gtag('config', 'G-Y15RYE6XQH');
+	</script>
 </body>
 
 </html>

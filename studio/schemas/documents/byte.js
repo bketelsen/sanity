@@ -31,7 +31,6 @@ export default {
     description: {},
     tags: {
       title: 'Tags',
-      group: 'taxonomy',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'tag' } }],
     },

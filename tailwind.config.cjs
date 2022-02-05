@@ -19,6 +19,7 @@ const config = {
   ],
   daisyui: {
     themes: [
+      'light',
       'dracula'
     ],
 

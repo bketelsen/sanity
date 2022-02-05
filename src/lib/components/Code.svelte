@@ -26,7 +26,7 @@
 
 	const extraLangMap = {
 		sh: 'shell',
-    golang: 'go'
+		golang: 'go'
 	};
 
 	const resolveLanguage = (lang: string) => {
@@ -38,9 +38,11 @@
 	export let portableText: BlockProps<{
 		code: string;
 		language: string;
+		filename: string;
 	}>;
 
 	const codeBlock = portableText.block;
+	$: lang = resolveLanguage(codeBlock.language);
 </script>
 
 <svelte:head>
@@ -53,12 +55,20 @@
 
 <!-- Only show line numbers when code has more than 8 lines -->
 <div>
+	{#if lang}
 	<span class="rounded bg-secondary text-secondary-content pl-4 pr-4 p-2">
-		{resolveLanguage(codeBlock.language)}
+		{lang}
 	</span>
+	{/if}
+	{#if codeBlock.filename }
+	<span class="rounded bg-accent text-accent-content pl-4 pr-4 p-2">
+		{codeBlock.filename}
+	</span>
+	{/if}
 	<pre class="!m-0 {codeBlock.code.split('\n').length > 8 ? 'line-numbers' : ''}">
 		<code class="!font-mono inline-block language-{resolveLanguage(codeBlock.language)}">
 				{codeBlock.code}
 		</code>
 	</pre>
 </div>
+
