@@ -1,15 +1,18 @@
 <script>
-  import SanityImage from './SanityImage.svelte'
-
-  export let portableText
-  $: ({block} = portableText)
+	import SanityImage from './SanityImage.svelte';
+	import { Lightbox } from 'svelte-lightbox';
+	export let portableText;
+	$: ({ block } = portableText);
 </script>
 
 {#if block.asset}
-  <figure>
-    <SanityImage image={block} />
-    {#if block.caption}
-      <figcaption>{block.caption}</figcaption>
-    {/if}
-  </figure>
+	<figure>
+		<Lightbox thumbnail description="Lightbox with thumbnail and image">
+			<SanityImage slot="thumbnail" image={block} />
+			<SanityImage slot="image" maxWidth="1600" image={block} />
+		</Lightbox>
+		{#if block.caption}
+			<figcaption>{block.caption}</figcaption>
+		{/if}
+	</figure>
 {/if}

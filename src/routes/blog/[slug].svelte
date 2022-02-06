@@ -53,7 +53,7 @@
 		herotext={DateTime.fromISO(post.publishedAt).toLocaleString(DateTime.DATE_FULL)}
 	/>
 	<!-- Section: Design Block -->
-	<div class="relative py-16 bg-base-100 overflow-hidden">
+	<div class="relative py-8 bg-base-100 overflow-hidden">
 		<div class="relative px-4 sm:px-6 lg:px-8">
 			<div class="mt-6 prose  prose-lg text-content-base mx-auto">
 				<Lightbox thumbnail description={post.image.alt || post.title || ''}>

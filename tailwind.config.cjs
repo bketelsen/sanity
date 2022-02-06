@@ -32,7 +32,7 @@ const config = {
               borderColor: 'rgba(0,0,0,0.1)',
             },
             'a:hover': {
-              color: '#31cdce !important',
+
               textDecoration: 'underline !important',
             },
             a: {
