@@ -61,7 +61,6 @@
 					{height}
 					{width}
 					class="w-full rounded-lg"
-					style="aspect-ratio: {aspectRatio};"
 				/>
 				<PortableText
 					blocks={post.body}
