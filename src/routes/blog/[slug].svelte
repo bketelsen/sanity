@@ -42,7 +42,6 @@
 	// If we split dimensions by "x", we get the width (1350) and height (900)
 	$: [width, height] = dimensions.split('x').map(Number);
 
-	$: aspectRatio = width / height;
 </script>
 
 <SEO {post} {global} />
