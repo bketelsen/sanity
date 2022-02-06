@@ -4,6 +4,6 @@
 
 </script>
 
-<span class="bg-primary text-primary-content">
+<span class="px-1 bg-accent/60 text-primary-content">
   {text}
 </span>
