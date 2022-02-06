@@ -38,6 +38,7 @@
     "luxon": "^2.3.0",
     "postcss": ">=8.2.15 <9.0.0",
     "prismjs": "^1.26.0",
+    "svelte-lightbox": "^0.6.1",
     "svelte-seo": "^1.4.0",
     "tw-elements": "^1.0.0-alpha9"
   }

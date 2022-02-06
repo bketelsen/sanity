@@ -24,7 +24,6 @@
 </script>
 
 <script>
-	import { Lightbox } from 'svelte-lightbox';
 	import PortableText from '@portabletext/svelte';
 	import Code from '$lib/components/Code.svelte';
 	import Highlight from '$lib/components/Highlight.svelte';
@@ -43,6 +42,7 @@
 	$: dimensions = post?.image?.asset?._ref?.split('-')[2];
 	// If we split dimensions by "x", we get the width (1350) and height (900)
 	$: [width, height] = dimensions.split('x').map(Number);
+
 </script>
 
 <SEO {post} {global} />
@@ -53,28 +53,16 @@
 		herotext={DateTime.fromISO(post.publishedAt).toLocaleString(DateTime.DATE_FULL)}
 	/>
 	<!-- Section: Design Block -->
-	<div class="relative py-16 bg-base-100 overflow-hidden">
-		<div class="relative px-4 sm:px-6 lg:px-8">
-			<div class="mt-6 prose  prose-lg text-content-base mx-auto">
-				<Lightbox thumbnail description={post.image.alt || post.title || ''}>
-					<img
-						slot="thumbnail"
-						src={urlFor(post.image).width(800).fit('fillmax')}
-						alt={post.image.alt || post.title || ''}
-						{height}
-						{width}
-						class="w-full rounded-lg shadow-2xl"
-					/>
-										<img
-						slot="image"
-						src={urlFor(post.image).width(1600).fit('fillmax')}
-						alt={post.image.alt || post.title || ''}
-						{height}
-						{width}
-						class="w-full rounded-lg shadow-2xl"
-					/>
-				</Lightbox>
-
+	<section class="mb-20 ">
+		<div class="max-w-prose mx-auto">
+			<div class="prose prose-lg">
+				<img
+					src={urlFor(post.image).width(800).fit('fillmax')}
+					alt={post.image.alt || post.title || ''}
+					{height}
+					{width}
+					class="w-full rounded-lg"
+				/>
 				<PortableText
 					blocks={post.body}
 					serializers={{
@@ -85,11 +73,12 @@
 						},
 						marks: {
 							link: Link,
-							highlight: Highlight
+														highlight: Highlight
+
 						}
 					}}
 				/>
 			</div>
 		</div>
-	</div>
+	</section>
 </PageWrapper>
