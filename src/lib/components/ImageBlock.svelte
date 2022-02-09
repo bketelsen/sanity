@@ -7,7 +7,11 @@
 
 {#if block.asset}
 	<figure>
-		<Lightbox thumbnail description="Lightbox with thumbnail and image">
+		<Lightbox
+			thumbnail
+			description={block.alt || ""}
+			transitionDuration={250}
+			>
 			<SanityImage slot="thumbnail" image={block} />
 			<SanityImage slot="image" maxWidth="1600" image={block} />
 		</Lightbox>
