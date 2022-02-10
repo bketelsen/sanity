@@ -3,43 +3,38 @@
 /* Write your global styles here, in PostCSS syntax */
 /* fixed width only on sm and up */
 
-
-
 body {
-    @apply bg-base-100;
+	@apply bg-base-100;
 }
 main {
-    @apply mb-auto bg-base-100;
+	@apply mb-auto bg-base-100;
 }
-
-
 
 /* body */
 .bodyContainer {
-    @apply flex flex-col mt-10 h-screen justify-between bg-base-100;
+	@apply flex flex-col mt-10 h-screen justify-between bg-base-100;
 }
 .sectionWrapper {
-    @apply text-base-content  bg-base-100;
+	@apply text-base-content  bg-base-100;
 }
 .sectionContainer {
-    @apply container px-5 py-5 lg:py-10 mx-auto;
+	@apply container px-5 py-5 lg:py-10 mx-auto;
 }
 
 .category {
-    @apply text-xs flex-none py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-green-100 text-green-700 uppercase rounded-full
-
+	@apply text-xs flex-none py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-green-100 text-green-700 uppercase rounded-full;
 }
 
 .technology {
-    @apply flex-none text-xs  py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-red-100 text-red-700 uppercase rounded-full
-
+	@apply flex-none text-xs  py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-red-100 text-red-700 uppercase rounded-full;
 }
 
-.tag{
-    @apply flex-none text-xs py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-orange-100 text-orange-700 uppercase rounded-full
+.tag {
+	@apply flex-none text-xs py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-orange-100 text-orange-700 uppercase rounded-full;
 }
 .label {
-    @apply font-semibold text-base-content;
+	@apply font-semibold text-base-content;
 }
+
 @tailwind components;
 @tailwind utilities;

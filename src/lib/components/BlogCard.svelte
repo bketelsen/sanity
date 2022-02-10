@@ -1,12 +1,11 @@
 <script>
 	export let post;
 	import SanityImage from './SanityImage.svelte';
-
 </script>
 
 <a sveltekit:prefetch href={`${post.slug}`}>
 	<div class="card text-center shadow-2xl">
-		<figure class="px-10 pt-10">
+		<figure>
 			<SanityImage image={post.image} maxWidth={402} alt={post.title} classes="rounded-xl" />
 		</figure>
 		<div class="card-body">
@@ -17,7 +16,7 @@
 			</div>
 			<div class="justify-center card-actions">
 				{#each post.tags || [] as tag}
-					<div class="tag"><a href="{tag.scopedSlug.current}">#{tag.taxonomy.title}</a></div>
+					<div class="tag"><a href={tag.scopedSlug.current}>#{tag.taxonomy.title}</a></div>
 				{/each}
 			</div>
 		</div>
