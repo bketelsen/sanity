@@ -11,7 +11,9 @@
 		<h2 class="card-title">{post.title}</h2>
 		<p>{post.excerpt}</p>
 		<div class="justify-center card-actions">
+			<a sveltekit:prefetch href={post.scopedSlug}>
 			<button class="mt-5 btn btn-outline btn-accent">Read More</button>
+		</a>
 		</div>
 		<div class="justify-center card-actions">
 			{#each post.tags || [] as tag}
