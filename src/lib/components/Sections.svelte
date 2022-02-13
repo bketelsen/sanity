@@ -4,7 +4,7 @@
 
 <div class="flex flex-wrap">
 	{#each sections as section}
-		<div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-primary">
+		<div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-accent">
 			<h2 class="text-2xl text-secondary font-bold mb-2">
 				{section.title}
 			</h2>
