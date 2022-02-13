@@ -27,9 +27,9 @@ export const get = async () => {
   ${posts
     .map(
       (post) => `<item>
-  <guid>https://brian.dev/blog/${post.slug}</guid>
+  <guid>https://brian.dev${post.slug}</guid>
   <title>${post.title}</title>
-  <link>https://brian.dev/blog/${post.slug}</link>
+  <link>https://brian.dev${post.slug}</link>
   <description>${post.excerpt}</description>
   <pubDate>${new Date(post.date).toUTCString()}</pubDate>
   </item>`
