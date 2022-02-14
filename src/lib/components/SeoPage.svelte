@@ -24,4 +24,11 @@
 			}
 		]
 	}}
+		twitter={{
+			site: '@bketelsen',
+			title: page.seo?.metaTitle || page.title,
+			description: page.seo?.metaDescription,
+			image: global.siteUrl + '/images/og/page/' + page._id + '.png',
+			imageAlt: page.title
+		}}
 />
