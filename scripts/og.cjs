@@ -14,6 +14,7 @@ const sanClient = sanityClient({
     useCdn: false, // `false` if you want to ensure fresh data
 })
 const postOgBaseUrl = 'https://og-sooty.vercel.app/api/open-graph-image?path=/brian.dev'
+const pageOgBaseUrl = 'https://og-sooty.vercel.app/api/open-graph-image?path=/brian.dev/page'
 
 const blogQuery = `*[
     _type == "post" &&
@@ -31,6 +32,14 @@ const blogQuery = `*[
     "estimatedWordCount": round(length(pt::text(body)) / 5),
     "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
     'tags': tags[]->{taxonomy,scopedSlug}
+  }`
+  const pageQuery = `*[
+    _type == "page" &&
+    defined(slug.current)
+  ] {
+    _id,
+    title,
+    'slug': slug.current,
   }`
 
 var Stream = require('stream').Transform;
@@ -63,6 +72,15 @@ sanClient.fetch(blogQuery).then((posts) => {
         console.log(`${post._id} ${post.slug}`)
         const filePath = path.join("static", "images", "og", "blog", `${post._id}.png`)
         downloadImageFromURL(postOgBaseUrl + post.slug, filePath);
+
+    })
+})
+sanClient.fetch(pageQuery).then((pages) => {
+    console.log('pages')
+    pages.forEach((page) => {
+        console.log(`${page._id} ${page.slug}`)
+        const filePath = path.join("static", "images", "og", "page", `${page._id}.png`)
+        downloadImageFromURL(pageOgBaseUrl + page.slug, filePath);
 
     })
 })

@@ -17,7 +17,7 @@
 		type: 'website',
 		images: [
 			{
-				url: 'https://og-sooty.vercel.app/api/open-graph-image?path=/brian.dev/page' + page.slug.current,
+				url: global.siteUrl + '/images/og/page/' + page._id + '.png',
 				width: 850,
 				height: 650,
 				alt: page.title
