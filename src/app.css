@@ -1,7 +1,5 @@
-/* Write your global styles here, in PostCSS syntax */
 @tailwind base;
-/* Write your global styles here, in PostCSS syntax */
-/* fixed width only on sm and up */
+
 
 body {
 	@apply bg-base-100;
