@@ -29,9 +29,7 @@
 		},
 		images: [
 			{
-				url:
-					'https://og-sooty.vercel.app/api/open-graph-image?path=/brian.dev' +
-					post.scopedSlug.current,
+				url: global.siteUrl + '/images/og/blog/' + post._id + '.png',
 				width: 1200,
 				height: 630,
 				alt: post.title
