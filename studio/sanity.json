@@ -9,12 +9,14 @@
     "basePath": "/studio"
   },
   "plugins": [
+    "@sanity/dashboard",
     "@sanity/base",
     "@sanity/components",
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "@sanity/code-input"
+    "@sanity/code-input",
+    "vercel-deploy"
   ],
   "env": {
     "development": {
