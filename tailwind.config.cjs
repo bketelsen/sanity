@@ -3,13 +3,16 @@ const colors = require('tailwindcss/colors');
 const config = {
   content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/tw-elements/dist/js/**/*.js'],
 
-	theme: {
-		extend: {
-			typography: (theme) => ({
-				DEFAULT: {
-					css: {
-						'--tw-prose-bullets': theme('colors.black'),
-						// these customizations are explained here https://youtu.be/-FzemNMcOGs
+  theme: {
+    extend: {
+      fontFamily: {
+        monolisa: ["monolisa", "sans-serif"],
+      },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            '--tw-prose-bullets': theme('colors.black'),
+            // these customizations are explained here https://youtu.be/-FzemNMcOGs
             blockquote: {
               borderLeft: '3px solid red',
               fontSize: 'inherit',
@@ -55,11 +58,11 @@ const config = {
             'ul > li::marker': {
               color: 'var(--tw-prose-body)',
             },
-					}
-				}
-			})
-		}
-	},
+          }
+        }
+      })
+    }
+  },
   variants: {
     extend: { typography: ['dark'], translate: ['group-hover'] }
   },

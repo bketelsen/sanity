@@ -1,6 +1,34 @@
 @tailwind base;
 
+@font-face {
+	font-family: "monolisa";
+	src: url("/assets/monolisa/woff2/MonoLisa-Bold.woff2") format("woff2"),
+	  url("/assets/monolisa/woff/MonoLisa-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+  }
+  
+  @font-face {
+	font-family: "monolisa";
+	src: url("/assets/monolisa/woff2/MonoLisa-Regular.woff2") format("woff2"),
+	  url("/assets/monolisa/woff/MonoLisa-Regular.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+  }
+  @font-face {
+	font-family: "monolisa";
+	src: url("/assets/monolisa/woff2/MonoLisa-RegularItalic.woff2") format("woff2"),
+	  url("/assets/monolisa/woff/MonoLisa-RegularItalic.woff") format("woff");
+	font-weight: 300;
+	font-style: italic	;
+	font-display: swap;
+  }
 
+  html {
+	@apply font-monolisa;
+}
 body {
 	@apply bg-base-100;
 }
