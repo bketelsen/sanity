@@ -3,6 +3,8 @@
 	import SanityImage from './SanityImage.svelte';
 </script>
 
+<a sveltekit:prefetch href={post.slug}>
+
 <div class="card shadow-xl image-full">
 	<figure>
 		<SanityImage image={post.image} maxWidth={402} alt={post.title} classes="rounded-xl" />
@@ -11,9 +13,7 @@
 		<h2 class="card-title">{post.title}</h2>
 		<p>{post.excerpt}</p>
 		<div class="justify-center card-actions">
-			<a sveltekit:prefetch href={post.slug}>
 			<button class="mt-5 btn btn-outline btn-accent">Read More</button>
-		</a>
 		</div>
 		<div class="justify-center card-actions">
 			{#each post.tags || [] as tag}
@@ -22,3 +22,4 @@
 		</div>
 	</div>
 </div>
+</a>
