@@ -6,7 +6,7 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        monolisa: ["monolisa", "sans-serif"],
+        monolisa: ["monolisa"],
       },
       typography: (theme) => ({
         DEFAULT: {
