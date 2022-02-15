@@ -17,14 +17,7 @@
 	font-style: normal;
 	font-display: optional;
   }
-  @font-face {
-	font-family: "monolisa";
-	src: url("/assets/monolisa/woff2/MonoLisa-RegularItalic.woff2") format("woff2"),
-	  url("/assets/monolisa/woff/MonoLisa-RegularItalic.woff") format("woff");
-	font-weight: 300;
-	font-style: italic	;
-	font-display: optional;
-  }
+
 
   html {
 	@apply font-monolisa;
