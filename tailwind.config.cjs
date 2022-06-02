@@ -5,9 +5,6 @@ const config = {
 
   theme: {
     extend: {
-      fontFamily: {
-        monolisa: ["monolisa"],
-      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
@@ -75,8 +72,7 @@ const config = {
   ],
   daisyui: {
     themes: [
-      'light',
-      'dracula'
+      'winter'
     ],
 
   },

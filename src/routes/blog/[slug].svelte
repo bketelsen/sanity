@@ -1,5 +1,4 @@
 <script context="module">
-
 	export async function load({ params, fetch, stuff }) {
 		try {
 			const url = `/blog/${params.slug}.json`;
@@ -64,7 +63,7 @@
 						{width}
 						class="w-full rounded-lg shadow-2xl"
 					/>
-										<img
+					<img
 						slot="image"
 						src={urlFor(post.image).width(1600).fit('fillmax')}
 						alt={post.image.alt || post.title || ''}
